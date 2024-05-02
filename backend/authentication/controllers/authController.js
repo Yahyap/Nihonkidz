@@ -8,6 +8,7 @@ exports.signup = async (req, res) => {
     console.log("Register .....");
     let { fullname, user_email_address, user_password } = req.body;
     let createdAt = new Date().toISOString();
+    let updateAt = new Date().toISOString();
 
     if (!fullname) {
       return res.status(400).json({
@@ -66,7 +67,7 @@ exports.signup = async (req, res) => {
       const salt = bcrypt.genSaltSync(8);
       user_password = bcrypt.hashSync(user_password, salt);
 
-      let ins_db = `INSERT INTO user_login (fullname, user_email, user_password, createdAt) VALUES ('${fullname}','${user_email_address}', '${user_password}', '${createdAt}');`;
+      let ins_db = `INSERT INTO user_login (fullname, user_email, user_password, createdAt, updateAt) VALUES ('${fullname}','${user_email_address}', '${user_password}', '${createdAt}', '${updateAt}');`;
       connection.query(ins_db, function (err, data) {
         return res.status(201).json({
           status: "Success",
@@ -138,6 +139,7 @@ exports.signin = async (req, res) => {
         token,
       });
     });
+
   } catch (err) {
     return res.status(err.code).json({
       status: "Failed",
@@ -149,5 +151,46 @@ exports.signin = async (req, res) => {
 exports.protected = async (req, res) => {
   return res.status(200).json({
     message: "Rute yang dilindungi. Selamat datang, " + req.jwt.fullname,
+  });
+};
+
+exports.updatepass = async (req, res) => {
+  console.log("Update Password .....");
+  let { old_password, new_password } = req.body;
+  let updateAt = new Date().toISOString();
+
+  db = `
+  SELECT * FROM user_login
+  WHERE user_email = "${req.jwt.user_email_address}"
+  `;
+
+  connection.query(db, function (err, data) {
+    if (old_password == new_password) {
+      return res.status(401).json({
+        status: "Failed",
+        requestAt: new Date().toISOString(),
+        message: "The new password cannot be the same as the old one",
+      });
+    }
+
+    const oldpasswordIsValid = bcrypt.compareSync(old_password, data[0].user_password);
+    if (!oldpasswordIsValid) {
+      return res.status(401).json({
+        status: "Failed",
+        requestAt: new Date().toISOString(),
+        message: "Wrong Old Password",
+      });
+    }
+
+    const salt = bcrypt.genSaltSync(8);
+    new_password = bcrypt.hashSync(new_password, salt);
+
+    update = `UPDATE user_login SET user_password = '${new_password}', updateAt = '${updateAt}' WHERE user_email = "${req.jwt.user_email_address}"`
+    connection.query(update, function (err, data) {
+      return res.status(201).json({
+        status: "Success",
+        requestAt: new Date().toISOString(),
+      });
+    });
   });
 };

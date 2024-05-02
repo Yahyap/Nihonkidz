@@ -11,5 +11,6 @@ router.use((req, res, next) => {
 router.post("/register", authController.signup);
 router.post("/login", authController.signin);
 router.get("/protected", jwtAuth(), authController.protected);
+router.put("/updatepass", jwtAuth(), authController.updatepass);
 
 module.exports = router;
