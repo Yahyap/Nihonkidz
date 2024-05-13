@@ -132,6 +132,7 @@ exports.signin = async (req, res) => {
       let fullname = data[0].fullname;
 
       const token = jwt.sign({ user_id, user_email_address, fullname }, process.env.JWT_SECRET);
+      res.cookie("token", token);
       return res.status(201).json({
         status: "Success",
         message: "logged in successfully",
@@ -139,7 +140,23 @@ exports.signin = async (req, res) => {
         token,
       });
     });
+  } catch (err) {
+    return res.status(err.code).json({
+      status: "Failed",
+      message: err.message,
+    });
+  }
+};
 
+exports.logout = async (req, res) => {
+  try {
+    console.log("Logout .....");
+    res.clearCookie("token");
+    return res.status(200).json({
+      status: "Success",
+      requestAt: new Date().toISOString(),
+      message: "logged out successfully",
+    });
   } catch (err) {
     return res.status(err.code).json({
       status: "Failed",
@@ -150,7 +167,7 @@ exports.signin = async (req, res) => {
 
 exports.protected = async (req, res) => {
   return res.status(200).json({
-    message: "Rute yang dilindungi. Selamat datang, " + req.jwt.fullname,
+    message: "HAI. Selamat datang, " + req.jwt.fullname,
   });
 };
 
@@ -185,7 +202,7 @@ exports.updatepass = async (req, res) => {
     const salt = bcrypt.genSaltSync(8);
     new_password = bcrypt.hashSync(new_password, salt);
 
-    update = `UPDATE user_login SET user_password = '${new_password}', updateAt = '${updateAt}' WHERE user_email = "${req.jwt.user_email_address}"`
+    update = `UPDATE user_login SET user_password = '${new_password}', updateAt = '${updateAt}' WHERE user_email = "${req.jwt.user_email_address}"`;
     connection.query(update, function (err, data) {
       return res.status(201).json({
         status: "Success",

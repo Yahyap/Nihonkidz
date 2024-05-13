@@ -4,7 +4,7 @@ exports.home = async (req, res) => {
   try {
     console.log("Home .....");
     let db = `
-    SELECT tabel_artikel.id, tabel_artikel.judul, tabel_artikel.deskripsi1, tabel_artikel.deskripsi2, tabel_artikel.deskripsi3 FROM tabel_artikel ORDER BY RAND() LIMIT 5
+    SELECT tabel_artikel.id, tabel_artikel.judul FROM tabel_artikel ORDER BY RAND() LIMIT 5
       `;
     connection.query(db, function (err, data) {
       if (data.length <= 0) {
