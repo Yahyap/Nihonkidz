@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz with Transitions</title>
+    <style>
+      .question {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+      .question.active {
+        display: block;
+        opacity: 1;
+      }
+      .question.entering {
+        opacity: 0;
+      }
+      .question.exiting {
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Quiz</h1>
+    <div id="quiz-container">
+      <!-- Question 1 -->
+      <div class="question active" data-correct="B">
+        <p>1. Apa ibukota Indonesia?</p>
+        <div><input type="radio" name="q1" value="A" /> A. Surabaya</div>
+        <div><input type="radio" name="q1" value="B" /> B. Jakarta</div>
+        <div><input type="radio" name="q1" value="C" /> C. Bandung</div>
+        <div><input type="radio" name="q1" value="D" /> D. Medan</div>
+        <div><input type="radio" name="q1" value="E" /> E. Bali</div>
+        <button onclick="nextQuestion()">Next</button>
+      </div>
+      <!-- Question 2 -->
+      <div class="question" data-correct="D">
+        <p>2. Berapa jumlah provinsi di Indonesia?</p>
+        <div><input type="radio" name="q2" value="A" /> A. 32</div>
+        <div><input type="radio" name="q2" value="B" /> B. 33</div>
+        <div><input type="radio" name="q2" value="C" /> C. 34</div>
+        <div><input type="radio" name="q2" value="D" /> D. 35</div>
+        <div><input type="radio" name="q2" value="E" /> E. 36</div>
+        <button onclick="nextQuestion()">Next</button>
+      </div>
+      <!-- Question 3 -->
+      <div class="question" data-correct="A">
+        <p>3. Apa lagu kebangsaan Indonesia?</p>
+        <div><input type="radio" name="q3" value="A" /> A. Indonesia Raya</div>
+        <div><input type="radio" name="q3" value="B" /> B. Tanah Airku</div>
+        <div>
+          <input type="radio" name="q3" value="C" /> C. Garuda Pancasila
+        </div>
+        <div>
+          <input type="radio" name="q3" value="D" /> D. Satu Nusa Satu Bangsa
+        </div>
+        <div>
+          <input type="radio" name="q3" value="E" /> E. Rayuan Pulau Kelapa
+        </div>
+        <button onclick="finishQuiz()">Finish</button>
+      </div>
+    </div>
+
+    <script>
+      let score = 0;
+      let currentQuestionIndex = 0;
+      const questions = document.querySelectorAll(".question");
+      const totalQuestions = questions.length;
+
+      function nextQuestion() {
+        const currentQuestion = questions[currentQuestionIndex];
+        const selectedOption = currentQuestion.querySelector(
+          'input[type="radio"]:checked'
+        );
+
+        if (!selectedOption) {
+          alert("Pilih salah satu jawaban!");
+          return;
+        }
+
+        const correctAnswer = currentQuestion.getAttribute("data-correct");
+        if (selectedOption.value === correctAnswer) {
+          alert("Jawaban benar!");
+          score++;
+        } else {
+          alert(`Jawaban salah! Jawaban yang benar adalah ${correctAnswer}`);
+        }
+
+        currentQuestion.classList.remove("active");
+        currentQuestion.classList.add("exiting");
+
+        currentQuestionIndex++;
+        if (currentQuestionIndex < totalQuestions) {
+          const nextQuestion = questions[currentQuestionIndex];
+          nextQuestion.classList.add("entering");
+          nextQuestion.classList.add("active");
+          setTimeout(() => {
+            nextQuestion.classList.remove("entering");
+            nextQuestion.classList.remove("exiting");
+          }, 500); // 500ms to match CSS transition duration
+        } else {
+          finishQuiz();
+        }
+      }
+
+      function finishQuiz() {
+        alert(`Nilai Anda adalah ${score} dari ${totalQuestions}`);
+        score = 0; // Reset the score for the next quiz attempt
+        currentQuestionIndex = 0;
+        questions.forEach((q) => q.classList.remove("active"));
+        questions[0].classList.add("active");
+      }
+    </script>
+  </body>
+</html>

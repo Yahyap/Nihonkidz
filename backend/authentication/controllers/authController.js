@@ -1,20 +1,19 @@
 const connection = require("../mysql/connect");
 const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
 const validator = require("validator");
 
 exports.signup = async (req, res) => {
   try {
     console.log("Register .....");
-    let { fullname, user_email_address, user_password } = req.body;
+    let { firstname, lastname, user_email_address, user_password, user_password_repeat } = req.body;
     let createdAt = new Date().toISOString();
     let updateAt = new Date().toISOString();
 
-    if (!fullname) {
+    if (!firstname) {
       return res.status(400).json({
         status: "Failed",
         requestAt: new Date().toISOString(),
-        message: "Please Input Fullname",
+        message: "Please Input firstname",
       });
     }
 
@@ -50,6 +49,14 @@ exports.signup = async (req, res) => {
       });
     }
 
+    if (user_password_repeat =! user_password) {
+      return res.status(400).json({
+        status: "Failed",
+        requestAt: new Date().toISOString(),
+        message: "Please Correct Input Password",
+      });
+    }
+
     let db = `
   SELECT * FROM user_login 
   WHERE user_email = "${user_email_address}"
@@ -67,7 +74,7 @@ exports.signup = async (req, res) => {
       const salt = bcrypt.genSaltSync(8);
       user_password = bcrypt.hashSync(user_password, salt);
 
-      let ins_db = `INSERT INTO user_login (fullname, user_email, user_password, createdAt, updateAt) VALUES ('${fullname}','${user_email_address}', '${user_password}', '${createdAt}', '${updateAt}');`;
+      let ins_db = `INSERT INTO user_login (firstname, lastname, user_email, user_password, createdAt, updateAt) VALUES ('${firstname}', '${lastname}', '${user_email_address}', '${user_password}', '${createdAt}', '${updateAt}');`;
       connection.query(ins_db, function (err, data) {
         return res.status(201).json({
           status: "Success",
@@ -129,15 +136,20 @@ exports.signin = async (req, res) => {
       }
 
       let user_id = data[0].user_id;
-      let fullname = data[0].fullname;
+      let firstname = data[0].firstname;
+      let lastname = data[0].lastname;
+      const userData = { user_id, user_email_address, firstname, lastname };
+      const cookieOptions = {
+        httpOnly: true,
+        secure: false
+      };
 
-      const token = jwt.sign({ user_id, user_email_address, fullname }, process.env.JWT_SECRET);
-      res.cookie("token", token);
+      res.cookie('token', userData, cookieOptions);
       return res.status(201).json({
         status: "Success",
         message: "logged in successfully",
         requestAt: new Date().toISOString(),
-        token,
+        userData,
       });
     });
   } catch (err) {
@@ -151,7 +163,7 @@ exports.signin = async (req, res) => {
 exports.logout = async (req, res) => {
   try {
     console.log("Logout .....");
-    res.clearCookie("token");
+    res.clearCookie('token');
     return res.status(200).json({
       status: "Success",
       requestAt: new Date().toISOString(),
@@ -167,7 +179,7 @@ exports.logout = async (req, res) => {
 
 exports.protected = async (req, res) => {
   return res.status(200).json({
-    message: "HAI. Selamat datang, " + req.jwt.fullname,
+    message: "HAI. Selamat datang, " + req.jwt.firstname + " " + req.jwt.lastname,
   });
 };
 

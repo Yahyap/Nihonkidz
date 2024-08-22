@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>Belajar Huruf Hiragana dan Katakana</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap" />
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css" />
+    <style>
+      .word-equal-size {
+        width: 48px;
+        height: 60px;
+      }
+      .button-combo {
+        width: 80px;
+        height: 60px;
+      }
+      .button-quiz-size {
+        width: 255px;
+        height: 70px;
+      }
+
+      @media (max-width: 600px) {
+        .button-equal-size {
+          width: 35px;
+          height: 50px;
+        }
+        .button-combo {
+          width: 65px;
+          height: 50px;
+        }
+      }
+    </style>
+  </head>
+
+  <body id="page-top">
+    <div id="wrapper">
+      <nav
+        class="navbar align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0 navbar-dark">
+        <div class="container-fluid d-flex flex-column p-0">
+          <a
+            class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0"
+            href="#">
+            <div class="sidebar-brand-icon rotate-n-15">
+              <i class="fas fa-laugh-wink"></i>
+            </div>
+            <div class="sidebar-brand-text mx-3"><span>Brand</span></div>
+          </a>
+          <hr class="sidebar-divider my-0" />
+          <ul class="navbar-nav text-light" id="accordionSidebar">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html"
+                ><i class="fas fa-home"></i><span>Home</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="profile.html"
+                ><i class="fas fa-user"></i><span>Profile</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="huruf.html"
+                ><i class="fas fa-font"></i><span>Huruf</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="kosakata.html"
+                ><i class="fas fa-book"></i><span>Kosakata</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="percakapan.html"
+                ><i class="fas fa-user-friends"></i><span>Percakapan</span></a
+              >
+            </li>
+          </ul>
+          <div class="text-center d-none d-md-inline">
+            <button
+              class="btn rounded-circle border-0"
+              id="sidebarToggle"
+              type="button"></button>
+          </div>
+        </div>
+      </nav>
+      <div class="d-flex flex-column" id="content-wrapper">
+        <div id="content">
+          <nav
+            class="navbar navbar-expand bg-white shadow mb-4 topbar static-top navbar-light">
+            <div class="container-fluid">
+              <button
+                class="btn btn-link d-md-none rounded-circle me-3"
+                id="sidebarToggleTop"
+                type="button">
+                <i class="fas fa-bars"></i>
+              </button>
+              <ul class="navbar-nav flex-nowrap ms-auto">
+                <div class="d-none d-sm-block topbar-divider"></div>
+                <li class="nav-item dropdown no-arrow">
+                  <div class="nav-item dropdown no-arrow">
+                    <a
+                      class="dropdown-toggle nav-link"
+                      aria-expanded="false"
+                      data-bs-toggle="dropdown"
+                      href="#"
+                      ><span
+                        id="username"
+                        class="d-none d-lg-inline me-2 text-gray-600 small"
+                        >Valerie Luna</span
+                      ><img
+                        class="border rounded-circle img-profile"
+                        src="assets/img/avatars/avatar1.jpeg"
+                    /></a>
+                    <div
+                      class="dropdown-menu shadow dropdown-menu-end animated--grow-in">
+                      <a class="dropdown-item" href="#"
+                        ><i
+                          class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i
+                        >&nbsp;Profile</a
+                      ><a class="dropdown-item" href="#"
+                        ><i
+                          class="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i
+                        >&nbsp;Settings</a
+                      ><a class="dropdown-item" href="#"
+                        ><i
+                          class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i
+                        >&nbsp;Activity log</a
+                      >
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#"
+                        ><i
+                          class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i
+                        >&nbsp;Logout</a
+                      >
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <div class="container-fluid">
+            <div
+              class="d-sm-flex justify-content-between align-items-center mb-4">
+              <h3 class="text-dark mb-0">
+                Belajar Huruf Hiragana dan Katakana
+              </h3>
+            </div>
+            <div
+              class="row d-flex justify-content-center align-items-center mb-4">
+              <div class="col-md-4 mb-2">
+                <div class="card shadow border-start-success py-1">
+                  <div class="card-body">
+                    <div class="g-2 mb-2">
+                      <div class="text-dark fw-bold h4 mb-0">
+                        <span>Ayo Belajar Hiragana!</span>
+                      </div>
+                      <div class="text-dark p1 mb-0 my-1">
+                        <span>Kenali Hiragana dalam bahasa Jepang</span>
+                      </div>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <button
+                        class="btn btn-sm shadow border-start-success py-2 d-flex align-items-center button-quiz-size">
+                        <div class="col-md-3">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h5 mb-0">
+                              <span>1</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>あ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>a</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>い</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>i</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>う</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>u</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>え</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>e</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>お</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>o</span>
+                            </div>
+                          </div>
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <button
+                        class="btn btn-sm shadow border-start-success py-2 d-flex align-items-center button-quiz-size">
+                        <div class="col-md-3">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h5 mb-0">
+                              <span>2</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>か</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ka</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>き</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ki</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>く</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ku</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>け</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ke</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>こ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ko</span>
+                            </div>
+                          </div>
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <button
+                        class="btn btn-sm shadow border-start-success py-2 d-flex align-items-center button-quiz-size">
+                        <div class="col-md-3">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h5 mb-0">
+                              <span>3</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>さ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>sa</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>し</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>shi</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>す</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>su</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>せ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>se</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>そ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>so</span>
+                            </div>
+                          </div>
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <button
+                        class="btn btn-sm shadow border-start-success py-2 d-flex align-items-center button-quiz-size">
+                        <div class="col-md-3">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h5 mb-0">
+                              <span>4</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>た</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ta</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ち</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>chi</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>つ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>tsu</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>て</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>te</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>と</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>to</span>
+                            </div>
+                          </div>
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <button
+                        class="btn btn-sm shadow border-start-success py-2 d-flex align-items-center button-quiz-size">
+                        <div class="col-md-3">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h5 mb-0">
+                              <span>5</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>な</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>na</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>に</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ni</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ぬ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>nu</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ね</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ne</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>の</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>no</span>
+                            </div>
+                          </div>
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <button
+                        class="btn btn-sm shadow border-start-success py-2 d-flex align-items-center button-quiz-size">
+                        <div class="col-md-3">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h5 mb-0">
+                              <span>6</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>は</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ha</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ひ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>hi</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ふ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>fu</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>へ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>he</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ほ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ho</span>
+                            </div>
+                          </div>
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <button
+                        class="btn btn-sm shadow border-start-success py-2 d-flex align-items-center button-quiz-size">
+                        <div class="col-md-3">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h5 mb-0">
+                              <span>7</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ま</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ma</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>み</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>mi</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>む</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>mu</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>め</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>me</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>も</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>mo</span>
+                            </div>
+                          </div>
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <button
+                        class="btn btn-sm shadow border-start-success py-2 d-flex align-items-center button-quiz-size">
+                        <div class="col-md-3">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h5 mb-0">
+                              <span>8</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>や</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ya</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ゆ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>yu</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>よ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>yo</span>
+                            </div>
+                          </div>
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <button
+                        class="btn btn-sm shadow border-start-success py-2 d-flex align-items-center button-quiz-size">
+                        <div class="col-md-3">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h5 mb-0">
+                              <span>9</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ら</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ra</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>り</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ri</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>る</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ru</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>れ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>re</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ろ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ro</span>
+                            </div>
+                          </div>
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <button
+                        class="btn btn-sm shadow border-start-success py-2 d-flex align-items-center button-quiz-size">
+                        <div class="col-md-3">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h5 mb-0">
+                              <span>10</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>わ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>wa</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>を</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>o</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ん</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>n</span>
+                            </div>
+                          </div>
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-2">
+                <div class="card shadow border-start-success py-1">
+                  <div class="card-body">
+                    <div class="g-2 mb-2">
+                      <div class="text-dark fw-bold h4 mb-0">
+                        <span>Ayo Belajar Katakana!</span>
+                      </div>
+                      <div class="text-dark p1 mb-0 my-1">
+                        <span>Kenali Katakana dalam bahasa Jepang</span>
+                      </div>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <button
+                        class="btn btn-sm shadow border-start-success py-2 d-flex align-items-center button-quiz-size">
+                        <div class="col-md-3">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h5 mb-0">
+                              <span>1</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ア</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>a</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>イ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>i</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ウ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>u</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>エ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>e</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>オ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>o</span>
+                            </div>
+                          </div>
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <button
+                        class="btn btn-sm shadow border-start-success py-2 d-flex align-items-center button-quiz-size">
+                        <div class="col-md-3">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h5 mb-0">
+                              <span>2</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>カ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ka</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>キ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ki</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ク</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ku</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ケ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ke</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>コ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ko</span>
+                            </div>
+                          </div>
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <button
+                        class="btn btn-sm shadow border-start-success py-2 d-flex align-items-center button-quiz-size">
+                        <div class="col-md-3">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h5 mb-0">
+                              <span>3</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>サ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>sa</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>シ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>shi</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ス</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>su</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>セ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>se</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ソ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>so</span>
+                            </div>
+                          </div>
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <button
+                        class="btn btn-sm shadow border-start-success py-2 d-flex align-items-center button-quiz-size">
+                        <div class="col-md-3">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h5 mb-0">
+                              <span>4</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>タ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ta</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>チ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>chi</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ツ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>tsu</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>テ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>te</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ト</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>to</span>
+                            </div>
+                          </div>
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <button
+                        class="btn btn-sm shadow border-start-success py-2 d-flex align-items-center button-quiz-size">
+                        <div class="col-md-3">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h5 mb-0">
+                              <span>5</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ナ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>na</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ニ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ni</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ヌ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>nu</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ネ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ne</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ノ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>no</span>
+                            </div>
+                          </div>
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <button
+                        class="btn btn-sm shadow border-start-success py-2 d-flex align-items-center button-quiz-size">
+                        <div class="col-md-3">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h5 mb-0">
+                              <span>6</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ハ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ha</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ヒ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>hi</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>フ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>fu</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ヘ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>he</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ホ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ho</span>
+                            </div>
+                          </div>
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <button
+                        class="btn btn-sm shadow border-start-success py-2 d-flex align-items-center button-quiz-size">
+                        <div class="col-md-3">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h5 mb-0">
+                              <span>7</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>マ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ma</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ミ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>mi</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ム</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>mu</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>メ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>me</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>モ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>mo</span>
+                            </div>
+                          </div>
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <button
+                        class="btn btn-sm shadow border-start-success py-2 d-flex align-items-center button-quiz-size">
+                        <div class="col-md-3">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h5 mb-0">
+                              <span>8</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ヤ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ya</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ユ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>yu</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ヨ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>yo</span>
+                            </div>
+                          </div>
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <button
+                        class="btn btn-sm shadow border-start-success py-2 d-flex align-items-center button-quiz-size">
+                        <div class="col-md-3">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h5 mb-0">
+                              <span>9</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ラ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ra</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>リ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ri</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ル</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ru</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>レ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>re</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ロ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ro</span>
+                            </div>
+                          </div>
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <button
+                        class="btn btn-sm shadow border-start-success py-2 d-flex align-items-center button-quiz-size">
+                        <div class="col-md-3">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h5 mb-0">
+                              <span>10</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ワ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>wa</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ヲ</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>o</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="card-body m-1 p-0">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ン</span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>n</span>
+                            </div>
+                          </div>
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="bg-white sticky-footer">
+          <div class="container my-auto">
+            <div class="text-center my-auto copyright">
+              <span>Copyright © Brand 2024</span>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <a class="border rounded d-inline scroll-to-top" href="#page-top"
+        ><i class="fas fa-angle-up"></i
+      ></a>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/theme.js"></script>
+  </body>
+</html>

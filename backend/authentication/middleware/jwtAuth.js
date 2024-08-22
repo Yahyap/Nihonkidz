@@ -6,24 +6,26 @@ const jwtAuth = () => {
   try {
     return async (req, res, next) => {
       // const authorization = req.headers.authorization;
-      const token = req.cookies["token"];
-      // console.log(authorization);
+      const token = req.cookies.token;
+      
+      console.log(token);
       // if (!authorization) {
       //   return res.status(401).json({ error: "Unauthorized" });
       // }
 
       if (!token) {
-        return res.status(401).json({ error: "Unauthorized" });
+        return res.status(401).json({ status: "Failed", error: "Unauthorized" });
       }
+      next();
 
       // const token = authorization.split(" ")[1];
-      jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
-        if (err) {
-          return res.status(401).json({ error: "Invalid token" });
-        }
-        req.jwt = decoded;
-        next();
-      });
+      // jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+      //   if (err) {
+      //     return res.status(401).json({ status: "Failed", error: "Invalid token" });
+      //   }
+      //   req.jwt = decoded;
+      //   next();
+      // });
     };
   } catch (err) {
     return res.status(err.code).json({

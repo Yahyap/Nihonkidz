@@ -1,0 +1,2022 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>Kosakata - KidzNihon</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap" />
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css" />
+    <style>
+      .button-equal-size {
+        width: 48px;
+        height: 60px;
+      }
+      .button-combo {
+        width: 80px;
+        height: 60px;
+      }
+
+      @media (max-width: 600px) {
+        .button-equal-size {
+          width: 35px;
+          height: 50px;
+        }
+        .button-combo {
+          width: 65px;
+          height: 50px;
+        }
+      }
+    </style>
+  </head>
+
+  <body id="page-top">
+    <div id="wrapper">
+      <nav
+        class="navbar align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0 navbar-dark">
+        <div class="container-fluid d-flex flex-column p-0">
+          <a
+            class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0"
+            href="#">
+            <div class="sidebar-brand-icon rotate-n-15">
+              <i class="fas fa-laugh-wink"></i>
+            </div>
+            <div class="sidebar-brand-text mx-3"><span>KidzNihon</span></div>
+          </a>
+          <hr class="sidebar-divider my-0" />
+          <ul class="navbar-nav text-light" id="accordionSidebar">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html"
+                ><i class="fas fa-home"></i><span>Home</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="profile.html"
+                ><i class="fas fa-user"></i><span>Profile</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="huruf.html"
+                ><i class="fas fa-font"></i><span>Huruf</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="kosakata.html"
+                ><i class="fas fa-book"></i><span>Kosakata</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="percakapan.html"
+                ><i class="fas fa-user-friends"></i><span>Percakapan</span></a
+              >
+            </li>
+          </ul>
+          <div class="text-center d-none d-md-inline">
+            <button
+              class="btn rounded-circle border-0"
+              id="sidebarToggle"
+              type="button"></button>
+          </div>
+        </div>
+      </nav>
+      <div class="d-flex flex-column" id="content-wrapper">
+        <div id="content">
+          <nav
+            class="navbar navbar-expand bg-white shadow mb-4 topbar static-top navbar-light">
+            <div class="container-fluid">
+              <button
+                class="btn btn-link d-md-none rounded-circle me-3"
+                id="sidebarToggleTop"
+                type="button">
+                <i class="fas fa-bars"></i>
+              </button>
+              <ul class="navbar-nav flex-nowrap ms-auto">
+                <div class="d-none d-sm-block topbar-divider"></div>
+                <li class="nav-item dropdown no-arrow">
+                  <div class="nav-item dropdown no-arrow">
+                    <a
+                      class="dropdown-toggle nav-link"
+                      aria-expanded="false"
+                      data-bs-toggle="dropdown"
+                      href="#"
+                      ><span
+                        id="username"
+                        class="d-none d-lg-inline me-2 text-gray-600 small"
+                        >Valerie Luna</span
+                      ><img
+                        class="border rounded-circle img-profile"
+                        src="assets/img/avatars/avatar1.jpeg"
+                    /></a>
+                    <div
+                      class="dropdown-menu shadow dropdown-menu-end animated--grow-in">
+                      <a class="dropdown-item" href="profile.html"
+                        ><i
+                          class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i
+                        >&nbsp;Profile</a
+                      >
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#" id="logoutBtn"
+                        ><i
+                          class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i
+                        >&nbsp;Logout</a
+                      >
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <div class="container-fluid">
+            <div
+              class="d-sm-flex justify-content-between align-items-center mb-4">
+              <h3 class="text-dark mb-0">Huruf Hiragana dan Katakana</h3>
+            </div>
+            <div class="row">
+              <div class="row g-2 mb-4 flex-nowrap">
+                <div class="col-auto">
+                  <button class="btn btn-primary" onclick="switchKana()">
+                    <span
+                      data-hiragana="Ubah ke Hiragana"
+                      data-katakana="Ubah ke Katakana"
+                      >Ubah ke Katakana</span
+                    >
+                  </button>
+                  <button class="btn btn-outline-secondary">
+                    <span>Belajar Huruf</span>
+                  </button>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card shadow border-start-success py-1">
+                  <div class="card-body">
+                    <div class="g-2 mb-2">
+                      <div class="text-dark fw-bold h4 mb-0">
+                        <span
+                          data-hiragana="Ayo Belajar Hiragana!"
+                          data-katakana="Ayo Belajar Katakana!"
+                          >Ayo Belajar Hiragana!</span
+                        >
+                      </div>
+                      <div class="text-dark p1 mb-0 my-1">
+                        <span
+                          data-hiragana="Kenali Hiragana dalam bahasa Jepang"
+                          data-katakana="Kenali Katakana dalam bahasa Jepang"
+                          >Kenali Hiragana dalam bahasa Jepang</span
+                        >
+                      </div>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('あ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="あ" data-katakana="ア"
+                                >あ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>a</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('い')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="い" data-katakana="イ"
+                                >い</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>i</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('う')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="う" data-katakana="ウ"
+                                >う</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>u</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('え')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="え" data-katakana="エ"
+                                >え</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>e</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('お')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="お" data-katakana="オ"
+                                >お</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>o</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('か')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="か" data-katakana="カ"
+                                >か</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ka</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('き')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="き" data-katakana="キ"
+                                >き</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ki</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('く')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="く" data-katakana="ク"
+                                >く</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ku</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('け')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="け" data-katakana="ケ"
+                                >け</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ke</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('こ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="こ" data-katakana="コ"
+                                >こ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ko</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('さ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="さ" data-katakana="サ"
+                                >さ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>sa</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('し')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="し" data-katakana="シ"
+                                >し</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>shi</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('す')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="す" data-katakana="ス"
+                                >す</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>su</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('せ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="せ" data-katakana="セ"
+                                >せ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>se</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('そ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="そ" data-katakana="ソ"
+                                >そ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>so</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('た')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="た" data-katakana="タ"
+                                >た</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ta</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('ち')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ち" data-katakana="チ"
+                                >ち</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>chi</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('つ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="つ" data-katakana="ツ"
+                                >つ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>tsu</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('て')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="て" data-katakana="テ"
+                                >て</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>te</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('と')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="と" data-katakana="ト"
+                                >と</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>to</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('な')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="な" data-katakana="ナ"
+                                >な</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>na</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('に')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="に" data-katakana="ニ"
+                                >に</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ni</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('ぬ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ぬ" data-katakana="ヌ"
+                                >ぬ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>nu</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('ね')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ね" data-katakana="ネ"
+                                >ね</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ne</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('の')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="の" data-katakana="ノ"
+                                >の</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>no</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('は')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="は" data-katakana="ハ"
+                                >は</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ha</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('ひ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ひ" data-katakana="ヒ"
+                                >ひ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>hi</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('ふ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ふ" data-katakana="フ"
+                                >ふ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>fu</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('へ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="へ" data-katakana="ヘ"
+                                >へ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>he</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('ほ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ほ" data-katakana="ホ"
+                                >ほ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ho</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('ま')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ま" data-katakana="マ"
+                                >ま</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ma</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('み')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="み" data-katakana="ミ"
+                                >み</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>mi</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('む')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="む" data-katakana="ム"
+                                >む</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>mu</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('め')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="め" data-katakana="メ"
+                                >め</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>me</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('も')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="も" data-katakana="モ"
+                                >も</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>mo</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('や')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="や" data-katakana="ヤ"
+                                >や</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ya</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <div
+                          class="card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span></span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('ゆ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ゆ" data-katakana="ユ"
+                                >ゆ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>yu</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <div
+                          class="card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span></span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('よ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="よ" data-katakana="ヨ"
+                                >よ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>yo</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('ら')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ら" data-katakana="ラ"
+                                >ら</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ra</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('り')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="り" data-katakana="リ"
+                                >り</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ri</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('る')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="る" data-katakana="ル"
+                                >る</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ru</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('れ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="れ" data-katakana="レ"
+                                >れ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>re</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('ろ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ろ" data-katakana="ロ"
+                                >ろ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ro</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('わ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="わ" data-katakana="ワ"
+                                >わ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>wa</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <div
+                          class="card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span></span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('を')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="を" data-katakana="ヲ"
+                                >を</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>o</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <div
+                          class="card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span></span>
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('n')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ん" data-katakana="ン"
+                                >ん</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>n</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card shadow border-start-primary py-1">
+                  <div class="card-body">
+                    <div class="g-2 mb-2">
+                      <div class="text-dark fw-bold h4 mb-0">
+                        <span>Dakuon </span>
+                      </div>
+                      <div class="text-dark p1 mb-0 my-1">
+                        <span>Tambahkan simbol untuk mengubah suara </span>
+                      </div>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('が')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="が" data-katakana="ガ"
+                                >が</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ga</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('ぎ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ぎ" data-katakana="ギ"
+                                >ぎ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>gi</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('ぐ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ぐ" data-katakana="グ"
+                                >ぐ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>gu</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('げ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="げ" data-katakana="ゲ"
+                                >げ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ge</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('ご')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ご" data-katakana="ゴ"
+                                >ご</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>go</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('ざ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ざ" data-katakana="ザ"
+                                >ざ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>za</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('じ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="じ" data-katakana="ジ"
+                                >じ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ji</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('ず')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ず" data-katakana="ズ"
+                                >ず</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>zu</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('ぜ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ぜ" data-katakana="ゼ"
+                                >ぜ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ze</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('ぞ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ぞ" data-katakana="ゾ"
+                                >ぞ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>zo</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('だ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="だ" data-katakana="ダ"
+                                >だ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>da</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('ぢ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ぢ" data-katakana="ヂ"
+                                >ぢ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ji</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('づ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="づ" data-katakana="ヅ"
+                                >づ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>zu</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('で')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="で" data-katakana="デ"
+                                >で</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>de</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('ど')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ど" data-katakana="ド"
+                                >ど</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>do</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('ば')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ば" data-katakana="バ"
+                                >ば</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ba</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('び')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="び" data-katakana="ビ"
+                                >び</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>bi</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('ぶ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ぶ" data-katakana="ブ"
+                                >ぶ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>bu</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('べ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="べ" data-katakana="ベ"
+                                >べ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>be</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('ぼ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ぼ" data-katakana="ボ"
+                                >ぼ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>bo</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('ぱ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ぱ" data-katakana="パ"
+                                >ぱ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>pa</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('ぴ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ぴ" data-katakana="ピ"
+                                >ぴ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>pi</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('ぷ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ぷ" data-katakana="プ"
+                                >ぷ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>pu</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('ぺ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ぺ" data-katakana="ペ"
+                                >ぺ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>pe</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-equal-size d-flex justify-content-center align-items-center"
+                          onclick="speak('ぽ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ぽ" data-katakana="ポ"
+                                >ぽ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>po</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card shadow border-start-primary py-1">
+                  <div class="card-body">
+                    <div class="g-2 mb-2">
+                      <div class="text-dark fw-bold h4 mb-0 my-1">
+                        <span>Youon </span>
+                      </div>
+                      <div class="text-dark p1 mb-0">
+                        <span
+                          >Tambahkan huruf kecil ya(ゃ),yu(ゅ),ya(ょ) untuk
+                          membuat suku kata yang baru
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-combo d-flex justify-content-center align-items-center"
+                          onclick="speak('きゃ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="きゃ" data-katakana="キャ"
+                                >きゃ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>kya</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-combo d-flex justify-content-center align-items-center"
+                          onclick="speak('きゅ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="きゅ" data-katakana="キュ"
+                                >きゅ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>kyu</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-combo d-flex justify-content-center align-items-center"
+                          onclick="speak('きょ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="きょ" data-katakana="キョ"
+                                >きょ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>kyo</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-combo d-flex justify-content-center align-items-center"
+                          onclick="speak('ぎゃ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ぎゃ" data-katakana="ギャ"
+                                >ぎゃ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>gya</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-combo d-flex justify-content-center align-items-center"
+                          onclick="speak('ぎゅ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ぎゅ" data-katakana="ギュ"
+                                >ぎゅ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>gyu</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-combo d-flex justify-content-center align-items-center"
+                          onclick="speak('ぎょ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ぎょ" data-katakana="ギョ"
+                                >ぎょ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>gyo</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-combo d-flex justify-content-center align-items-center"
+                          onclick="speak('しゃ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="しゃ" data-katakana="シャ"
+                                >しゃ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>sha</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-combo d-flex justify-content-center align-items-center"
+                          onclick="speak('しゅ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="しゅ" data-katakana="シュ"
+                                >しゅ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>shu</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-combo d-flex justify-content-center align-items-center"
+                          onclick="speak('しょ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="しょ" data-katakana="ショ"
+                                >しょ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>sho</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-combo d-flex justify-content-center align-items-center"
+                          onclick="speak('じゃ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="じゃ" data-katakana="ジャ"
+                                >じゃ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ja</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-combo d-flex justify-content-center align-items-center"
+                          onclick="speak('じゅ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="じゅ" data-katakana="ジュ"
+                                >じゅ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ju</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-combo d-flex justify-content-center align-items-center"
+                          onclick="speak('じょ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="じょ" data-katakana="ジョ"
+                                >じょ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>jo</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-combo d-flex justify-content-center align-items-center"
+                          onclick="speak('ちゃ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ちゃ" data-katakana="チャ"
+                                >ちゃ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>cha</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-combo d-flex justify-content-center align-items-center"
+                          onclick="speak('ちゅ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ちゅ" data-katakana="チュ"
+                                >ちゅ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>chu</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-combo d-flex justify-content-center align-items-center"
+                          onclick="speak('ちょ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ちょ" data-katakana="チョ"
+                                >ちょ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>cho</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-combo d-flex justify-content-center align-items-center"
+                          onclick="speak('にゃ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="にゃ" data-katakana="ニャ"
+                                >にゃ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>nya</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-combo d-flex justify-content-center align-items-center"
+                          onclick="speak('にゅ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="にゅ" data-katakana="ニュ"
+                                >にゅ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>nyu</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-combo d-flex justify-content-center align-items-center"
+                          onclick="speak('にょ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="にょ" data-katakana="ニョ"
+                                >にょ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>nyo</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-combo d-flex justify-content-center align-items-center"
+                          onclick="speak('ひゃ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ひゃ" data-katakana="ヒャ"
+                                >ひゃ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>hya</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-combo d-flex justify-content-center align-items-center"
+                          onclick="speak('ひゅ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ひゅ" data-katakana="ヒュ"
+                                >ひゅ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>hyu</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-combo d-flex justify-content-center align-items-center"
+                          onclick="speak('ひょ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ひょ" data-katakana="ヒョ"
+                                >ひょ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>hyo</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-combo d-flex justify-content-center align-items-center"
+                          onclick="speak('びゃ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="びゃ" data-katakana="ビャ"
+                                >びゃ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>bya</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-combo d-flex justify-content-center align-items-center"
+                          onclick="speak('びゅ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="びゅ" data-katakana="ビュ"
+                                >びゅ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>byu</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-combo d-flex justify-content-center align-items-center"
+                          onclick="speak('びょ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="びょ" data-katakana="ビョ"
+                                >びょ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>byo</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-combo d-flex justify-content-center align-items-center"
+                          onclick="speak('ぴゃ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ぴゃ" data-katakana="ピャ"
+                                >ぴゃ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>pya</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-combo d-flex justify-content-center align-items-center"
+                          onclick="speak('ぴゅ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ぴゅ" data-katakana="ピュ"
+                                >ぴゅ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>pyu</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-combo d-flex justify-content-center align-items-center"
+                          onclick="speak('ぴょ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="ぴょ" data-katakana="ピョ"
+                                >ぴょ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>pyo</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-combo d-flex justify-content-center align-items-center"
+                          onclick="speak('みゃ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="みゃ" data-katakana="ミャ"
+                                >みゃ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>mya</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-combo d-flex justify-content-center align-items-center"
+                          onclick="speak('みゅ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="みゅ" data-katakana="ミュ"
+                                >みゅ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>myu</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-combo d-flex justify-content-center align-items-center"
+                          onclick="speak('みょ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="みょ" data-katakana="ミョ"
+                                >みょ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>myo</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="row g-2 mb-2 justify-content-center flex-nowrap">
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-combo d-flex justify-content-center align-items-center"
+                          onclick="speak('りゃ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="りゃ" data-katakana="リャ"
+                                >りゃ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>rya</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-combo d-flex justify-content-center align-items-center"
+                          onclick="speak('りゅ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="りゅ" data-katakana="リュ"
+                                >りゅ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ryu</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          class="btn btn-sm card shadow border-start-success py-2 button-combo d-flex justify-content-center align-items-center"
+                          onclick="speak('りょ')">
+                          <div class="card-body m-1 p-1">
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span data-hiragana="りょ" data-katakana="リョ"
+                                >りょ</span
+                              >
+                            </div>
+                            <div class="text-dark fw-bold h7 mb-0">
+                              <span>ryo</span>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="bg-white sticky-footer">
+          <div class="container my-auto">
+            <div class="text-center my-auto copyright">
+              <span>Copyright © KidzNihon 2024</span>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <a class="border rounded d-inline scroll-to-top" href="#page-top"
+        ><i class="fas fa-angle-up"></i
+      ></a>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/chart.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/huruf.js"></script>
+    <!-- <script src="assets/js/index.js"></script> -->
+  </body>
+</html>
