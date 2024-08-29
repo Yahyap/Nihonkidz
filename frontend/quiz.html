@@ -27,6 +27,38 @@
           height: 50px;
         }
       }
+      /* Gaya untuk emoji jempol */
+      .emoji-thumbs-up {
+        font-size: 24px;
+        position: absolute;
+        right: -30px; /* Sesuaikan jarak dari tombol */
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: opacity 0.5s ease, right 0.5s ease;
+      }
+
+      .emoji-thumbs-up.show {
+        opacity: 1;
+        right: 10px; /* Posisikan di sebelah tombol */
+      }
+
+      /* Gaya untuk emoji X */
+      .emoji-x {
+        font-size: 24px;
+        color: red; /* Warna merah untuk X */
+        position: absolute;
+        right: -30px; /* Sesuaikan jarak dari tombol */
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: opacity 0.5s ease, right 0.5s ease;
+      }
+
+      .emoji-x.show {
+        opacity: 1;
+        right: 10px; /* Posisikan di sebelah tombol */
+      }
     </style>
   </head>
 
@@ -39,7 +71,7 @@
             <div class="container-fluid"></div>
           </nav>
           <div class="container-fluid">
-            <h3 class="text-dark mb-4">Latihan Hiragana</h3>
+            <h3 class="text-dark mb-4">Latihan Mengenal Huruf</h3>
           </div>
           <div
             class="row d-flex justify-content-center align-items-center mb-4">
@@ -76,7 +108,8 @@
                   <button
                     type="button"
                     class="btn btn-primary"
-                    id="closeButton">
+                    id="closeButton"
+                    onclick="closeQuiz()">
                     Tutup
                   </button>
                 </div>
@@ -87,7 +120,7 @@
         <footer class="bg-white sticky-footer mt-5">
           <div class="container my-auto">
             <div class="text-center my-auto copyright">
-              <span>Copyright © Brand 2024</span>
+              <span>Copyright © KidzNihon 2024</span>
             </div>
           </div>
         </footer>
@@ -100,6 +133,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="assets/js/theme.js"></script>
     <script src="assets/js/quiz.js"></script>

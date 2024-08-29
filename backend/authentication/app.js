@@ -8,7 +8,7 @@ const cookieParser = require("cookie-parser");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors({ origin: "http://localhost:8082", credentials: true }));
+app.use(cors({ origin: "http://localhost:8080", credentials: true }));
 app.use(cookieParser());
 
 app.use("/auth", authRoutes);
@@ -19,7 +19,7 @@ app.get("/", function (req, res) {
 
 console.log(process.env.JWT_SECRET);
 
-const server = app.listen(8080, function () {
+const server = app.listen(8081, function () {
   const port = server.address().port;
 
   console.log("Example app listening at http://localhost:%s", port);

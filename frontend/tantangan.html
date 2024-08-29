@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>Quiz</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap" />
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css" />
+    <style>
+      .button-equal-size {
+        width: 80px;
+        height: 60px;
+      }
+      .gif-equal-size {
+        width: 200px;
+        height: 200px;
+      }
+
+      @media (max-width: 600px) {
+        .button-equal-size {
+          width: 35px;
+          height: 50px;
+        }
+      }
+      /* Gaya untuk emoji jempol */
+      .emoji-thumbs-up {
+        font-size: 24px;
+        position: absolute;
+        right: -30px; /* Sesuaikan jarak dari tombol */
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: opacity 0.5s ease, right 0.5s ease;
+      }
+
+      .emoji-thumbs-up.show {
+        opacity: 1;
+        right: 10px; /* Posisikan di sebelah tombol */
+      }
+
+      /* Gaya untuk emoji X */
+      .emoji-x {
+        font-size: 24px;
+        color: red; /* Warna merah untuk X */
+        position: absolute;
+        right: -30px; /* Sesuaikan jarak dari tombol */
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: opacity 0.5s ease, right 0.5s ease;
+      }
+
+      .emoji-x.show {
+        opacity: 1;
+        right: 10px; /* Posisikan di sebelah tombol */
+      }
+    </style>
+  </head>
+
+  <body id="page-top">
+    <div id="wrapper">
+      <div class="d-flex flex-column" id="content-wrapper">
+        <div id="content">
+          <nav
+            class="navbar navbar-expand bg-white shadow mb-4 topbar static-top navbar-light">
+            <div class="container-fluid"></div>
+          </nav>
+          <div class="container-fluid">
+            <h3 class="text-dark mb-4">Tantangan Mengenal Huruf</h3>
+          </div>
+          <div
+            class="row d-flex justify-content-center align-items-center mb-4">
+            <div class="col-lg-9 mb-2">
+              <div class="card shadow border-start-success py-1">
+                <div class="card-body">
+                  <div class="g-2 mb-2">
+                    <div class="text-dark fw-bold h4 mb-0">
+                      <span id="pertanyaan">Ini huruf apa ?</span>
+                    </div>
+                  </div>
+                  <div id="quiz-container"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="modal fade"
+            id="quizEndModal"
+            tabindex="-1"
+            aria-labelledby="quizEndModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="quizEndModalLabel">
+                    Quiz Selesai!
+                  </h5>
+                </div>
+                <div class="modal-body">
+                  Selamat! Anda telah menyelesaikan quiz ini.
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="closeButton"
+                    onclick="closeQuiz()">
+                    Tutup
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="bg-white sticky-footer mt-5">
+          <div class="container my-auto">
+            <div class="text-center my-auto copyright">
+              <span>Copyright © KidzNihon 2024</span>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <a class="border rounded d-inline scroll-to-top" href="#page-top"
+        ><i class="fas fa-angle-up"></i
+      ></a>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/tantangan.js"></script>
+  </body>
+</html>

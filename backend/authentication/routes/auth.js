@@ -12,6 +12,5 @@ router.post("/register", authController.signup);
 router.post("/login", authController.signin);
 router.get("/protected", jwtAuth(), authController.protected);
 router.post("/logout", jwtAuth(), authController.logout);
-router.put("/updatepass", jwtAuth(), authController.updatepass);
 
 module.exports = router;

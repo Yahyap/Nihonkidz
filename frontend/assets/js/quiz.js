@@ -55,13 +55,22 @@ document.addEventListener("DOMContentLoaded", async function () {
   //   ],
   // };
 
+  function getQueryParam(name) {
+    const params = new URLSearchParams(window.location.search);
+    return params.get(name);
+  }
+
+  // Ambil id_quiz dan pilihan dari URL
+  let id_quiz = getQueryParam("id_quiz");
+
+  console.log("ID Kuis:", id_quiz);
+
   let quizData = {}; // Deklarasi variabel global
 
   async function fetchQuizData() {
-    const id_quiz = 1;
     try {
       const response = await fetch(
-        `http://localhost:8082/belajar/quiz/${id_quiz}`,
+        `http://localhost:8083/belajar/quiz/${id_quiz}`,
         {
           method: "GET",
           credentials: "include",
@@ -69,7 +78,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       );
 
       if (!response.ok) {
-        throw new Error("Gagal memuat data kuis");
+        window.location.href = "login.html";
       }
 
       quizData = await response.json(); // Update variabel global
@@ -181,19 +190,38 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   // Fungsi untuk menangani klik tombol jawaban
   function handleClick(button, answer) {
-    const question = document.querySelector(".quiz-question");
-    const correctAnswer = question.getAttribute("data-answer");
+    const $button = $(button);
+    const question = $(".quiz-question").first();
+    const correctAnswer = question.data("answer");
 
-    button.disabled = true;
-    button.classList.add("disabled");
+    // Nonaktifkan tombol
+    $button.prop("disabled", true).addClass("disabled");
 
     if (answer === correctAnswer) {
-      button.classList.remove("border-start-success");
-      button.classList.add("btn-success");
-      question.querySelector(".next-button").style.display = "block";
+      $button.removeClass("border-start-success").addClass("btn-success");
+
+      // Tambahkan emoji jempol di sebelah tombol
+      const thumbsUp = $('<span class="emoji-thumbs-up">👍</span>');
+      $button.append(thumbsUp);
+
+      // Tampilkan dan animasikan emoji jempol
+      setTimeout(() => {
+        thumbsUp.addClass("show");
+      }, 100);
+
+      // Tampilkan tombol "Next"
+      question.find(".next-button").show();
     } else {
-      button.classList.remove("border-start-success");
-      button.classList.add("btn-danger");
+      $button.removeClass("border-start-success").addClass("btn-danger");
+
+      // Tambahkan emoji X di sebelah tombol
+      const xMark = $('<span class="emoji-x">✖</span>');
+      $button.append(xMark);
+
+      // Tampilkan dan animasikan emoji X
+      setTimeout(() => {
+        xMark.addClass("show");
+      }, 100);
     }
   }
 
@@ -216,3 +244,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   // Memulai dengan pertanyaan pertama
 });
+function closeQuiz() {
+  window.location.href = "belajar";
+}

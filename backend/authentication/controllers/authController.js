@@ -5,7 +5,13 @@ const validator = require("validator");
 exports.signup = async (req, res) => {
   try {
     console.log("Register .....");
-    let { firstname, lastname, user_email_address, user_password, user_password_repeat } = req.body;
+    let {
+      firstname,
+      lastname,
+      user_email_address,
+      user_password,
+      user_password_repeat,
+    } = req.body;
     let createdAt = new Date().toISOString();
     let updateAt = new Date().toISOString();
 
@@ -49,7 +55,7 @@ exports.signup = async (req, res) => {
       });
     }
 
-    if (user_password_repeat =! user_password) {
+    if ((user_password_repeat = !user_password)) {
       return res.status(400).json({
         status: "Failed",
         requestAt: new Date().toISOString(),
@@ -126,7 +132,10 @@ exports.signin = async (req, res) => {
         });
       }
 
-      const passwordIsValid = bcrypt.compareSync(user_password, data[0].user_password);
+      const passwordIsValid = bcrypt.compareSync(
+        user_password,
+        data[0].user_password
+      );
       if (!passwordIsValid) {
         return res.status(401).json({
           status: "Failed",
@@ -141,10 +150,10 @@ exports.signin = async (req, res) => {
       const userData = { user_id, user_email_address, firstname, lastname };
       const cookieOptions = {
         httpOnly: true,
-        secure: false
+        secure: false,
       };
 
-      res.cookie('token', userData, cookieOptions);
+      res.cookie("token", userData, cookieOptions);
       return res.status(201).json({
         status: "Success",
         message: "logged in successfully",
@@ -163,7 +172,7 @@ exports.signin = async (req, res) => {
 exports.logout = async (req, res) => {
   try {
     console.log("Logout .....");
-    res.clearCookie('token');
+    res.clearCookie("token");
     return res.status(200).json({
       status: "Success",
       requestAt: new Date().toISOString(),
@@ -178,48 +187,37 @@ exports.logout = async (req, res) => {
 };
 
 exports.protected = async (req, res) => {
-  return res.status(200).json({
-    message: "HAI. Selamat datang, " + req.jwt.firstname + " " + req.jwt.lastname,
-  });
+  try {
+    console.log("Home .....");
+    const userData = req.cookies.token;
+    return res.status(201).json({
+      status: "Success",
+      requestAt: new Date().toISOString(),
+      message: "Ini home",
+      user: userData,
+    });
+  } catch (err) {
+    return res.status(err.code).json({
+      status: "Failed",
+      message: err.message,
+    });
+  }
 };
 
-exports.updatepass = async (req, res) => {
-  console.log("Update Password .....");
-  let { old_password, new_password } = req.body;
-  let updateAt = new Date().toISOString();
-
-  db = `
-  SELECT * FROM user_login
-  WHERE user_email = "${req.jwt.user_email_address}"
-  `;
-
-  connection.query(db, function (err, data) {
-    if (old_password == new_password) {
-      return res.status(401).json({
-        status: "Failed",
-        requestAt: new Date().toISOString(),
-        message: "The new password cannot be the same as the old one",
-      });
-    }
-
-    const oldpasswordIsValid = bcrypt.compareSync(old_password, data[0].user_password);
-    if (!oldpasswordIsValid) {
-      return res.status(401).json({
-        status: "Failed",
-        requestAt: new Date().toISOString(),
-        message: "Wrong Old Password",
-      });
-    }
-
-    const salt = bcrypt.genSaltSync(8);
-    new_password = bcrypt.hashSync(new_password, salt);
-
-    update = `UPDATE user_login SET user_password = '${new_password}', updateAt = '${updateAt}' WHERE user_email = "${req.jwt.user_email_address}"`;
-    connection.query(update, function (err, data) {
-      return res.status(201).json({
-        status: "Success",
-        requestAt: new Date().toISOString(),
-      });
+exports.home = async (req, res) => {
+  try {
+    console.log("Home .....");
+    const userData = req.cookies.token;
+    return res.status(201).json({
+      status: "Success",
+      requestAt: new Date().toISOString(),
+      message: "Ini home",
+      user: userData,
     });
-  });
+  } catch (err) {
+    return res.status(err.code).json({
+      status: "Failed",
+      message: err.message,
+    });
+  }
 };
