@@ -80,7 +80,8 @@ exports.signup = async (req, res) => {
       const salt = bcrypt.genSaltSync(8);
       user_password = bcrypt.hashSync(user_password, salt);
 
-      let ins_db = `INSERT INTO user_login (firstname, lastname, user_email, user_password, createdAt, updateAt) VALUES ('${firstname}', '${lastname}', '${user_email_address}', '${user_password}', '${createdAt}', '${updateAt}');`;
+      let ins_db = `INSERT INTO user_login (firstname, lastname, user_email, user_password, createdAt, updateAt) 
+      VALUES ('${firstname}', '${lastname}', '${user_email_address}', '${user_password}', '${createdAt}', '${updateAt}');`;
       connection.query(ins_db, function (err, data) {
         return res.status(201).json({
           status: "Success",
@@ -125,7 +126,7 @@ exports.signin = async (req, res) => {
     connection.query(db, function (err, data) {
       console.log(data.length);
       if (data.length <= 0) {
-        return res.status(401).json({
+        return res.status(400).json({
           status: "Failed",
           requestAt: new Date().toISOString(),
           message: "Wrong Email",
@@ -137,7 +138,7 @@ exports.signin = async (req, res) => {
         data[0].user_password
       );
       if (!passwordIsValid) {
-        return res.status(401).json({
+        return res.status(400).json({
           status: "Failed",
           requestAt: new Date().toISOString(),
           message: "Wrong Password",
@@ -189,12 +190,27 @@ exports.logout = async (req, res) => {
 exports.protected = async (req, res) => {
   try {
     console.log("Home .....");
-    const userData = req.cookies.token;
-    return res.status(201).json({
-      status: "Success",
-      requestAt: new Date().toISOString(),
-      message: "Ini home",
-      user: userData,
+    let userData = req.cookies.token;
+    console.log(userData);
+
+    db = `SELECT * FROM user_login WHERE user_email = "${userData.user_email_address}"`;
+    connection.query(db, function (err, data) {
+      let user_id = data[0].user_id;
+      let user_email_address = data[0].user_email;
+      let firstname = data[0].firstname;
+      let lastname = data[0].lastname;
+      userData = { user_id, user_email_address, firstname, lastname };
+      const cookieOptions = {
+        httpOnly: true,
+        secure: false,
+      };
+      res.cookie("token", userData, cookieOptions);
+      return res.status(201).json({
+        status: "Success",
+        requestAt: new Date().toISOString(),
+        message: "Ini home",
+        user: userData,
+      });
     });
   } catch (err) {
     return res.status(err.code).json({

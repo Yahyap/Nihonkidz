@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>Home - KidzNihon</title>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap" />
+    <link rel="stylesheet" href="../assets/fonts/fontawesome-all.min.css" />
+    <style>
+      .header {
+        background-color: #ffca28;
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+
+      .header h1 {
+        color: #f4511e;
+        font-weight: bold;
+      }
+
+      .card {
+        border-radius: 15px;
+        border: none;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .card-body {
+        background-color: #ffffff;
+        border-radius: 15px;
+      }
+
+      .card-title {
+        color: #ff7043;
+        font-size: 1.5rem;
+      }
+
+      .card-text {
+        color: #616161;
+        font-size: 1.1rem;
+      }
+
+      .tips-img {
+        max-height: 200px;
+        border-radius: 15px;
+      }
+      body {
+        background-color: #e6f7ff;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+      }
+      .article-title {
+        color: #ff6347;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 36px;
+        font-weight: bold;
+      }
+      .article-container {
+        background-color: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 25px;
+        margin-top: 20px;
+      }
+      .section-title {
+        color: #4682b4;
+        font-weight: bold;
+        margin-top: 20px;
+        font-size: 24px;
+      }
+      p {
+        font-size: 18px;
+        line-height: 1.8;
+      }
+      .kanji-img {
+        text-align: center;
+        margin: 20px 0;
+      }
+      .kanji-img img {
+        max-width: 100%;
+        border-radius: 10px;
+      }
+      .btn-learn-more {
+        background-color: #ff6347;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+      .btn-learn-more:hover {
+        background-color: #ff4500;
+      }
+    </style>
+  </head>
+
+  <body id="page-top">
+    <div id="wrapper">
+      <nav
+        class="navbar align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0 navbar-dark">
+        <div class="container-fluid d-flex flex-column p-0">
+          <a
+            class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0"
+            href="#">
+            <div class="sidebar-brand-icon rotate-n-15">
+              <i class="fas fa-laugh-wink"></i>
+            </div>
+            <div class="sidebar-brand-text mx-3"><span>KidzNihon</span></div>
+          </a>
+          <hr class="sidebar-divider my-0" />
+          <ul class="navbar-nav text-light" id="accordionSidebar">
+            <li class="nav-item">
+              <a class="nav-link active" href="index "
+                ><i class="fas fa-home"></i><span>Home</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="profile "
+                ><i class="fas fa-user"></i><span>Profile</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="huruf "
+                ><i class="fas fa-font"></i><span>Huruf</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="belajar "
+                ><i class="fas fa-book"></i><span>Belajar</span></a
+              >
+            </li>
+          </ul>
+          <div class="text-center d-none d-md-inline">
+            <button
+              class="btn rounded-circle border-0"
+              id="sidebarToggle"
+              type="button"></button>
+          </div>
+        </div>
+      </nav>
+      <div class="d-flex flex-column" id="content-wrapper">
+        <div id="content">
+          <nav
+            class="navbar navbar-expand bg-white shadow mb-4 topbar static-top navbar-light">
+            <div class="container-fluid">
+              <button
+                class="btn btn-link d-md-none rounded-circle me-3"
+                id="sidebarToggleTop"
+                type="button">
+                <i class="fas fa-bars"></i>
+              </button>
+              <ul class="navbar-nav flex-nowrap ms-auto">
+                <div class="d-none d-sm-block topbar-divider"></div>
+                <li class="nav-item dropdown no-arrow">
+                  <div class="nav-item dropdown no-arrow">
+                    <a
+                      class="dropdown-toggle nav-link"
+                      aria-expanded="false"
+                      data-bs-toggle="dropdown"
+                      href="#"
+                      ><span
+                        id="username"
+                        class="d-none d-lg-inline me-2 text-gray-600 small"
+                        >Valerie Luna</span
+                      ><img
+                        class="border rounded-circle img-profile"
+                        src="assets/img/avatars/icons8-user-default-64.png"
+                    /></a>
+                    <div
+                      class="dropdown-menu shadow dropdown-menu-end animated--grow-in">
+                      <a class="dropdown-item" href="profile"
+                        ><i
+                          class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i
+                        >&nbsp;Profile</a
+                      >
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#" id="logoutBtn"
+                        ><i
+                          class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i
+                        >&nbsp;Logout</a
+                      >
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <div class="container-fluid">
+            <div class="container">
+              <div class="row">
+                <div class="col-12 text-center">
+                  <div class="header">
+                    <h1>Menguasai Hiragana dan Katakana: Panduan Pemula</h1>
+                  </div>
+                  <img
+                    src="../assets/img/erin_aiueo_romaji_page-0001.jpg"
+                    alt="Hiragana dan Katakana"
+                    class="img-fluid" />
+                </div>
+              </div>
+
+              <div class="row card mt-5">
+                <div class="card-body col-lg-8 offset-lg-2">
+                  <p>
+                    Selamat datang di petualangan seru belajar bahasa Jepang! Di
+                    artikel ini, kita akan mulai dengan dasar-dasar yang
+                    penting: <strong>Hiragana</strong> dan
+                    <strong>Katakana</strong>. Dua set huruf ini sangat penting
+                    untuk bisa membaca dan menulis dalam bahasa Jepang. Jangan
+                    khawatir, belajar huruf-huruf ini bisa sangat menyenangkan,
+                    terutama dengan panduan khusus untuk kamu!
+                  </p>
+
+                  <div class="highlight text-center">
+                    <h4>Kenapa Hiragana dan Katakana Itu Menarik?</h4>
+                    <p>
+                      Huruf-huruf ini penuh dengan bentuk yang unik dan seru
+                      untuk digambar. Siapa yang tidak suka menggambar
+                      karakter-karakter keren dan lucu?
+                    </p>
+                  </div>
+
+                  <h3>1. Apa Itu Hiragana dan Katakana?</h3>
+                  <p>
+                    Di Jepang, ada tiga jenis huruf yang digunakan dalam
+                    tulisan: <strong>Hiragana</strong>,
+                    <strong>Katakana</strong>, dan <strong>Kanji</strong>. Tapi
+                    untuk sekarang, kita akan fokus pada Hiragana dan Katakana.
+                    Ini adalah dua sistem abjad yang masing-masing memiliki
+                    <strong>46 huruf dasar</strong>, dan setiap huruf mewakili
+                    satu suara. Hiragana digunakan untuk kata-kata asli Jepang,
+                    sementara Katakana digunakan untuk kata-kata yang dipinjam
+                    dari bahasa asing (seperti "komputer" menjadi
+                    "コンピュータ").
+                  </p>
+
+                  <div class="tips">
+                    <h5>Tips Seru: Buat Kartu Huruf Sendiri!</h5>
+                    <p>
+                      Cetak atau gambar sendiri kartu huruf Hiragana dan
+                      Katakana. Mainkan permainan tebak-tebakan dengan
+                      teman-temanmu, siapa yang bisa menebak huruf paling cepat!
+                    </p>
+                  </div>
+
+                  <h3>2. Cara Mudah Menghafal Huruf-Huruf</h3>
+                  <p>
+                    Tidak perlu terburu-buru! Berikut beberapa tips supaya
+                    belajar huruf jadi lebih mudah:
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Gunakan Kartu Huruf:</strong> Buat atau cetak
+                      kartu dengan huruf di satu sisi dan suaranya di sisi lain.
+                    </li>
+                    <li>
+                      <strong>Belajar dengan Lagu:</strong> Ada banyak lagu lucu
+                      dan ceria yang dibuat khusus untuk menghafal Hiragana dan
+                      Katakana. Coba dengarkan dan ikut bernyanyi!
+                    </li>
+                    <li>
+                      <strong>Gambar Huruf Sendiri:</strong> Buat coretan kecil
+                      untuk membantu kamu mengingat bentuk huruf. Misalnya,
+                      huruf "あ" (a) bisa digambar seperti ikan kecil yang
+                      berenang!
+                    </li>
+                  </ul>
+
+                  <div class="card text-center p-4">
+                    <img
+                      src="../assets/img/hiragana/Hiragana_あ_stroke_order_animation.gif"
+                      alt="Huruf Hiragana"
+                      class="img-fluid" />
+                    <h5 class="mt-3">Contoh Huruf Hiragana</h5>
+                  </div>
+
+                  <h3 class="mt-5">3. Latihan dengan Kuis Seru</h3>
+                  <p>
+                    Sudah siap menguji kemampuanmu? Kami telah menyiapkan kuis
+                    interaktif yang seru untuk membantu kamu menghafal Hiragana
+                    dan Katakana. Ayo coba kuis ini dan lihat seberapa banyak
+                    yang sudah kamu pelajari!
+                  </p>
+
+                  <div class="text-center">
+                    <a
+                      href="../belajar.html"
+                      class="btn btn-custom shadow border-start-success"
+                      >Mulai Belajar Sekarang!</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="bg-white sticky-footer">
+          <div class="container my-auto">
+            <div class="text-center my-auto copyright">
+              <span>Copyright © KidzNihon 2024</span>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <a class="border rounded d-inline scroll-to-top" href="#page-top"
+        ><i class="fas fa-angle-up"></i
+      ></a>
+    </div>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/chart.min.js"></script>
+    <script src="../assets/js/bs-init.js"></script>
+    <script src="../assets/js/artikel.js"></script>
+    <script src="../assets/js/theme.js"></script>
+  </body>
+</html>

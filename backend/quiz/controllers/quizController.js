@@ -3,7 +3,6 @@ const connection = require("../mysql/connect");
 exports.quiz = async (req, res) => {
   try {
     const id_quiz = req.params.id_quiz;
-    const userData = req.cookies.token;
     console.log(id_quiz);
     let db = `
     SELECT * FROM quiz_pertanyaan WHERE id_quiz = ${id_quiz}

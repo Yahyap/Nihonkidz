@@ -30,7 +30,7 @@
 
 //       const result = await response.json();
 //       if (response.ok) {
-//         window.location.href = "login.html";
+//         window.location.href = "login";
 //       } else {
 //         alert(result.message);
 //       }
@@ -40,13 +40,3 @@
 //     }
 //   });
 // }
-
-// function bacaartikel(id_artikel) {
-//   const url = `artikel?id_artikel=${id_artikel}`;
-//   window.location.href = url;
-// }
-
-function bacaartikel1() {
-  window.location.href =
-    "../frontend/artikel/5-tips-seru-untuk-memulai-belajar-bahasa-Jepang.html";
-}

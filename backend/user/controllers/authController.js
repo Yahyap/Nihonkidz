@@ -40,7 +40,7 @@ exports.updatepass = async (req, res) => {
 
   connection.query(db, function (err, data) {
     if (old_password == new_password) {
-      return res.status(401).json({
+      return res.status(400).json({
         status: "Failed",
         requestAt: new Date().toISOString(),
         message: "The new password cannot be the same as the old one",
@@ -48,7 +48,7 @@ exports.updatepass = async (req, res) => {
     }
 
     if (con_new_password != new_password) {
-      return res.status(401).json({
+      return res.status(400).json({
         status: "Failed",
         requestAt: new Date().toISOString(),
         message: "The password must be same",
@@ -60,7 +60,7 @@ exports.updatepass = async (req, res) => {
       data[0].user_password
     );
     if (!oldpasswordIsValid) {
-      return res.status(401).json({
+      return res.status(400).json({
         status: "Failed",
         requestAt: new Date().toISOString(),
         message: "Wrong Old Password",
@@ -70,10 +70,12 @@ exports.updatepass = async (req, res) => {
     const salt = bcrypt.genSaltSync(8);
     new_password = bcrypt.hashSync(new_password, salt);
 
-    update = `UPDATE user_login SET user_password = '${new_password}', updateAt = '${updateAt}' WHERE user_email = "${req.jwt.user_email_address}"`;
+    update = `UPDATE user_login 
+    SET user_password = '${new_password}', updateAt = '${updateAt}' WHERE user_email = "${userData.user_email_address}"`;
     connection.query(update, function (err, data) {
       return res.status(201).json({
         status: "Success",
+        message: "Password telah diperbarui",
         requestAt: new Date().toISOString(),
       });
     });
@@ -117,17 +119,19 @@ exports.updatename = async (req, res) => {
   connection.query(db, function (err, data) {
     console.log(data.length);
     if (data.length <= 0) {
-      return res.status(401).json({
+      return res.status(400).json({
         status: "Failed",
         requestAt: new Date().toISOString(),
         message: "Wrong Email",
       });
     }
 
-    update = `UPDATE user_login SET firstname = '${new_firstname}', lastname = '${new_lastname}', updateAt = '${updateAt}' WHERE user_email = "${user_email_address}"`;
+    update = `UPDATE user_login 
+    SET firstname = '${new_firstname}', lastname = '${new_lastname}', updateAt = '${updateAt}' WHERE user_email = "${user_email_address}"`;
     connection.query(update, function (err, data) {
       return res.status(201).json({
         status: "Success",
+        message: "Nama telah diperbarui",
         requestAt: new Date().toISOString(),
       });
     });

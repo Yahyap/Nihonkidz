@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     });
 
     const result = await response.json();
+    console.log(result);
     useremail = result.user.user_email_address;
     if (response.ok) {
       let spanElement = document.getElementById("username");
@@ -55,7 +56,9 @@ document
     console.log(useremail);
 
     if (user_email_address != useremail) {
-      let spanElement = document.getElementById("error");
+      let popContext = document.getElementById("quizEndModalLabel");
+      popContext.textContent = "Error";
+      let spanElement = document.getElementById("reason");
       spanElement.textContent = "Email salah";
       $("#quizEndModal").modal("show");
       stop;
@@ -76,10 +79,20 @@ document
 
     const result = await response.json();
     if (!response.ok) {
-      let spanElement = document.getElementById("error");
+      let popContext = document.getElementById("quizEndModalLabel");
+      popContext.innerText = "Error";
+      let spanElement = document.getElementById("reason");
       spanElement.textContent = result.message;
       $("#quizEndModal").modal("show");
     }
+    let popContext = document.getElementById("quizEndModalLabel");
+    popContext.innerText = result.status;
+    let spanElement = document.getElementById("reason");
+    spanElement.textContent = result.message;
+    $("#quizEndModal").modal("show");
+    setTimeout(function () {
+      location.reload();
+    }, 5000);
   });
 
 document
@@ -105,8 +118,15 @@ document
 
     const result = await response.json();
     if (!response.ok) {
-      let spanElement = document.getElementById("error");
+      let popContext = document.getElementById("quizEndModalLabel");
+      popContext.innerText = "Error";
+      let spanElement = document.getElementById("reason");
       spanElement.textContent = result.message;
       $("#quizEndModal").modal("show");
     }
+    let popContext = document.getElementById("quizEndModalLabel");
+    popContext.innerText = result.status;
+    let spanElement = document.getElementById("reason");
+    spanElement.textContent = result.message;
+    $("#quizEndModal").modal("show");
   });

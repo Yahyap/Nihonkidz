@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>Home - KidzNihon</title>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap" />
+    <link rel="stylesheet" href="../assets/fonts/fontawesome-all.min.css" />
+    <style>
+      .header {
+        background-color: #ffca28;
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+
+      .header h1 {
+        color: #f4511e;
+        font-weight: bold;
+      }
+
+      .card {
+        border-radius: 15px;
+        border: none;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .card-body {
+        background-color: #ffffff;
+        border-radius: 15px;
+      }
+
+      .card-title {
+        color: #ff7043;
+        font-size: 1.5rem;
+      }
+
+      .card-text {
+        color: #616161;
+        font-size: 1.1rem;
+      }
+      body {
+        background-color: #e6f7ff;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+      }
+      .article-title {
+        color: #ff6347;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 36px;
+        font-weight: bold;
+      }
+      .article-container {
+        background-color: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 25px;
+        margin-top: 20px;
+      }
+      .section-title {
+        color: #4682b4;
+        font-weight: bold;
+        margin-top: 20px;
+        font-size: 24px;
+      }
+      p {
+        font-size: 18px;
+        line-height: 1.8;
+      }
+      .kanji-img {
+        text-align: center;
+        margin: 20px 0;
+      }
+      .kanji-img img {
+        max-width: 100%;
+        border-radius: 10px;
+      }
+      .btn-learn-more {
+        background-color: #ff6347;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+      .btn-learn-more:hover {
+        background-color: #ff4500;
+      }
+    </style>
+  </head>
+
+  <body id="page-top">
+    <div id="wrapper">
+      <nav
+        class="navbar align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0 navbar-dark">
+        <div class="container-fluid d-flex flex-column p-0">
+          <a
+            class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0"
+            href="#">
+            <div class="sidebar-brand-icon rotate-n-15">
+              <i class="fas fa-laugh-wink"></i>
+            </div>
+            <div class="sidebar-brand-text mx-3"><span>KidzNihon</span></div>
+          </a>
+          <hr class="sidebar-divider my-0" />
+          <ul class="navbar-nav text-light" id="accordionSidebar">
+            <li class="nav-item">
+              <a class="nav-link active" href="index "
+                ><i class="fas fa-home"></i><span>Home</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="profile "
+                ><i class="fas fa-user"></i><span>Profile</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="huruf "
+                ><i class="fas fa-font"></i><span>Huruf</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="belajar "
+                ><i class="fas fa-book"></i><span>Belajar</span></a
+              >
+            </li>
+          </ul>
+          <div class="text-center d-none d-md-inline">
+            <button
+              class="btn rounded-circle border-0"
+              id="sidebarToggle"
+              type="button"></button>
+          </div>
+        </div>
+      </nav>
+      <div class="d-flex flex-column" id="content-wrapper">
+        <div id="content">
+          <nav
+            class="navbar navbar-expand bg-white shadow mb-4 topbar static-top navbar-light">
+            <div class="container-fluid">
+              <button
+                class="btn btn-link d-md-none rounded-circle me-3"
+                id="sidebarToggleTop"
+                type="button">
+                <i class="fas fa-bars"></i>
+              </button>
+              <ul class="navbar-nav flex-nowrap ms-auto">
+                <div class="d-none d-sm-block topbar-divider"></div>
+                <li class="nav-item dropdown no-arrow">
+                  <div class="nav-item dropdown no-arrow">
+                    <a
+                      class="dropdown-toggle nav-link"
+                      aria-expanded="false"
+                      data-bs-toggle="dropdown"
+                      href="#"
+                      ><span
+                        id="username"
+                        class="d-none d-lg-inline me-2 text-gray-600 small"
+                        >Valerie Luna</span
+                      ><img
+                        class="border rounded-circle img-profile"
+                        src="assets/img/avatars/icons8-user-default-64.png"
+                    /></a>
+                    <div
+                      class="dropdown-menu shadow dropdown-menu-end animated--grow-in">
+                      <a class="dropdown-item" href="profile"
+                        ><i
+                          class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i
+                        >&nbsp;Profile</a
+                      >
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#" id="logoutBtn"
+                        ><i
+                          class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i
+                        >&nbsp;Logout</a
+                      >
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <div class="container-fluid">
+            <div class="container my-4">
+              <div class="header">
+                <h1>5 Tips Seru untuk Memulai Belajar Bahasa Jepang</h1>
+              </div>
+              <div class="row">
+                <div class="col-md-12 mb-4">
+                  <div class="card">
+                    <div class="card-body image-container">
+                      <img
+                        src="../assets/img/Katakana Chart.jpg"
+                        alt="Belajar Huruf Jepang"
+                        class="tips-img mb-3" />
+                      <h5 class="card-title">
+                        1. Mulai dengan Huruf Hiragana dan Katakana
+                      </h5>
+                      <p class="card-text">
+                        Ayo, kita mulai petualangan belajar bahasa Jepang dengan
+                        mengenal huruf-huruf dasarnya: Hiragana dan Katakana!
+                        Huruf-huruf ini seperti abjad A-Z di bahasa Indonesia.
+                        Kamu bisa belajar huruf-huruf ini melalui gambar-gambar
+                        lucu dan permainan yang menyenangkan. Cobalah buat kartu
+                        huruf yang berwarna-warni atau mainkan permainan tebak
+                        huruf bersama teman-temanmu. Setelah kamu menguasai ini,
+                        membaca kata-kata dalam bahasa Jepang akan terasa
+                        seperti memecahkan teka-teki!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12 mb-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <img
+                        src="../assets/img/frasa-umum-dalam-bahasa-jepang.jpg"
+                        alt="Kata Sederhana"
+                        class="tips-img mb-3" />
+                      <h5 class="card-title">
+                        2. Hafalkan Kata-kata Sederhana
+                      </h5>
+                      <p class="card-text">
+                        Setelah mengenal huruf, saatnya belajar beberapa kata
+                        sederhana yang sering digunakan dalam bahasa Jepang.
+                        Kata-kata seperti "hai" (ya), "iie" (tidak), "arigatou"
+                        (terima kasih), dan "konnichiwa" (halo) sangat berguna
+                        untuk percakapan sehari-hari. Kamu bisa membuat kartu
+                        kata atau menggunakan aplikasi seru untuk membantu
+                        menghafal. Ingat, semakin sering kamu mengulang, semakin
+                        cepat kamu akan hafal! Dan jangan lupa, ucapkan
+                        kata-kata ini dengan suara keras dan penuh percaya diri,
+                        seolah-olah kamu sedang menyapa teman-teman di Jepang.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12 mb-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <img
+                        src="../assets/img/doraemon-nobitas-earth-symphony-1_169.jpeg"
+                        alt="Tonton Anime"
+                        class="tips-img mb-3" />
+                      <h5 class="card-title">
+                        3. Tonton Anime atau Kartun Jepang
+                      </h5>
+                      <p class="card-text">
+                        Siapa yang tidak suka menonton kartun? Nah, belajar
+                        bahasa Jepang bisa jadi lebih seru jika kamu menonton
+                        anime atau kartun Jepang favoritmu. Pilih anime yang
+                        kamu suka, lalu coba tonton dengan subtitle bahasa
+                        Jepang. Kamu akan mendengar cara orang Jepang berbicara
+                        sehari-hari, belajar intonasi, dan tentunya, memperkaya
+                        kosa kata kamu! Cobalah untuk meniru cara mereka
+                        berbicara, dan perlahan-lahan, kamu akan terbiasa dengan
+                        suara-suara bahasa Jepang. Dan ingat, tidak apa-apa jika
+                        tidak mengerti semuanya—nikmati saja prosesnya!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12 mb-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <iframe
+                        width="852"
+                        height="480"
+                        src="https://www.youtube.com/embed/L28mV6i-YhY"
+                        title="Lagu untuk menghafal tanggal dalam Bahasa Jepang"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen></iframe>
+                      <iframe
+                        width="854"
+                        height="479"
+                        src="https://www.youtube.com/embed/2vTFWVGjV7o"
+                        title="Lagu untuk menghafal nama hari dalam bahasa Jepang  - Youbi no Uta"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen></iframe>
+                      <h5 class="card-title">4. Belajar sambil bernyanyi</h5>
+                      <p class="card-text">
+                        Belajar bahasa Jepang melalui lagu sangat menyenangkan
+                        karena lagu-lagu sering kali memiliki melodi yang mudah
+                        diingat dan lirik yang berirama, membuat proses belajar
+                        terasa lebih santai dan tidak membosankan. Musik
+                        memudahkan kita untuk mengingat kata-kata dan frasa
+                        baru, serta memperkenalkan kita pada ungkapan-ungkapan
+                        sehari-hari dalam konteks yang lebih alami. Selain itu,
+                        bernyanyi membantu melatih pengucapan dengan cara yang
+                        menyenangkan, tanpa tekanan seperti dalam kelas formal.
+                        Kita juga bisa lebih merasakan emosi dan budaya Jepang
+                        melalui musiknya. Membuat belajar terasa seperti hobi,
+                        bukan tugas!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12 mb-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <img
+                        src="../assets/img/11365282.jpg"
+                        alt="Belajar Bersama Teman"
+                        class="tips-img mb-3"
+                        width="550" />
+                      <h5 class="card-title">5. Belajar Bersama Teman</h5>
+                      <p class="card-text">
+                        Belajar bahasa Jepang tidak harus sendirian, loh! Ajak
+                        teman-temanmu untuk belajar bersama. Kalian bisa saling
+                        bertukar ilmu, bermain kuis bahasa Jepang, atau bahkan
+                        membuat cerita pendek bersama dalam bahasa Jepang.
+                        Belajar bersama teman akan membuat proses belajar
+                        menjadi lebih menyenangkan dan penuh tawa. Kamu juga
+                        bisa mengadakan lomba kecil-kecilan, seperti siapa yang
+                        bisa menghafal huruf Hiragana paling cepat atau siapa
+                        yang bisa menyebutkan paling banyak kata dalam satu
+                        menit. Selain belajar, kalian juga akan memperkuat
+                        persahabatan!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="bg-white sticky-footer">
+          <div class="container my-auto">
+            <div class="text-center my-auto copyright">
+              <span>Copyright © KidzNihon 2024</span>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <a class="border rounded d-inline scroll-to-top" href="#page-top"
+        ><i class="fas fa-angle-up"></i
+      ></a>
+    </div>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/chart.min.js"></script>
+    <script src="../assets/js/bs-init.js"></script>
+    <script src="../assets/js/artikel.js"></script>
+    <script src="../assets/js/theme.js"></script>
+  </body>
+</html>

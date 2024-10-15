@@ -1,8 +1,8 @@
 const mysql = require("mysql");
 
 const connection = mysql.createPool({
-  host: process.env.DB_HOSTNAME || "localhost" ,
-  database: process.env.DB_NAME || "website edukasi jepang",
+  host: process.env.DB_HOSTNAME || "localhost",
+  database: process.env.DB_NAME || "website_edukasi_jepang",
   user: process.env.DB_USERNAME || "root",
   password: process.env.DB_PASSWORD || "",
 });
