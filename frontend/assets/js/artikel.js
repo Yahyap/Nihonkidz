@@ -1,23 +1,23 @@
-document.addEventListener("DOMContentLoaded", async function () {
-  try {
-    const response = await fetch("http://localhost:8081/auth/protected", {
-      method: "GET",
-      credentials: "include",
-    });
+// document.addEventListener("DOMContentLoaded", async function () {
+//   try {
+//     const response = await fetch("http://localhost:8081/auth/protected", {
+//       method: "GET",
+//       credentials: "include",
+//     });
 
-    const result = await response.json();
-    if (response.ok) {
-      let spanElement = document.getElementById("username");
-      spanElement.textContent =
-        result.user.firstname + ` ` + result.user.lastname;
-    } else {
-      window.location.href = "../login";
-    }
-  } catch (error) {
-    console.error("Error fetching home:", error);
-    window.location.href = "../login";
-  }
-});
+//     const result = await response.json();
+//     if (response.ok) {
+//       let spanElement = document.getElementById("username");
+//       spanElement.textContent =
+//         result.user.firstname + ` ` + result.user.lastname;
+//     } else {
+//       window.location.href = "../login";
+//     }
+//   } catch (error) {
+//     console.error("Error fetching home:", error);
+//     window.location.href = "../login";
+//   }
+// });
 
 const logoutButton = document.getElementById("logoutBtn");
 if (logoutButton) {

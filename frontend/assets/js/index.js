@@ -48,5 +48,25 @@
 
 function bacaartikel1() {
   window.location.href =
-    "../frontend/artikel/5-tips-seru-untuk-memulai-belajar-bahasa-Jepang.html";
+    "artikel/5-tips-seru-untuk-memulai-belajar-bahasa-Jepang.html";
+}
+function bacaartikel2() {
+  window.location.href =
+    "artikel/menguasai-hiragana-dan-katakana-panduan-pemula.html";
+}
+function bacaartikel3() {
+  window.location.href =
+    "artikel/kunci-sukses-berbicara-bahasa-jepang-dengan-lancar.html";
+}
+function bacaartikel4() {
+  window.location.href =
+    "artikel/kosakata-bahasa-jepang-sehari-hari-yang-harus-anda-ketahui.html";
+}
+function bacaartikel5() {
+  window.location.href =
+    "artikel/perbedaan-bahasa-jepang-formal-dan-Informal.html";
+}
+function bacaartikel6() {
+  window.location.href =
+    "artikel/belajar-kanji-10-karakter-dasar-yang-penting.html";
 }
