@@ -91,6 +91,21 @@
       .btn-read-more:hover {
         background-color: #ff4500;
       }
+      .video-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* Rasio 16:9 (9/16 * 100 = 56.25%) */
+        height: 0;
+        overflow: hidden;
+      }
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
     </style>
   </head>
 
@@ -206,7 +221,7 @@
                 </p>
                 <div class="fun-img">
                   <img
-                    src="https://via.placeholder.com/500x300"
+                    src="../assets/img/kata-ganti-orang2.jpg"
                     alt="Kata-Kata Sederhana" />
                 </div>
 
@@ -219,10 +234,16 @@
                   video anak-anak berbahasa Jepang. Ulangi sampai kamu bisa
                   mengucapkannya dengan benar!
                 </p>
-                <div class="fun-img">
-                  <img
-                    src="https://via.placeholder.com/500x300"
-                    alt="Dengarkan dan Ulangi" />
+                <div class="video-container">
+                  <iframe
+                    width="854"
+                    height="479"
+                    src="https://www.youtube.com/embed/2vTFWVGjV7o"
+                    title="Lagu untuk menghafal nama hari dalam bahasa Jepang  - Youbi no Uta"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
                 </div>
 
                 <h2 class="section-title">3. Latihan dengan Permainan Kuis</h2>
@@ -236,7 +257,7 @@
                 </p>
                 <div class="fun-img">
                   <img
-                    src="https://via.placeholder.com/500x300"
+                    src="../assets/img/favpng_japanese-language-proficiency-test-student-illustration-learning.png"
                     alt="Latihan dengan Permainan Kuis" />
                 </div>
 
@@ -250,7 +271,7 @@
                 </p>
                 <div class="fun-img">
                   <img
-                    src="https://via.placeholder.com/500x300"
+                    src="../assets/img/4277846.jpg"
                     alt="Berbicara dengan Teman" />
                 </div>
 
@@ -265,18 +286,14 @@
                 </p>
                 <div class="fun-img">
                   <img
-                    src="https://via.placeholder.com/500x300"
+                    src="../assets/img/yae2_4jwc_201007.jpg"
                     alt="Nikmati Proses Belajarnya" />
-                </div>
-
-                <div class="text-center mt-4">
-                  <a href="#" class="btn-read-more">Mulai Latihan Sekarang!</a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <footer class="bg-white sticky-footer">
+        <footer class="bg-white sticky-footer mt-3">
           <div class="container my-auto">
             <div class="text-center my-auto copyright">
               <span>Copyright © KidzNihon 2024</span>
