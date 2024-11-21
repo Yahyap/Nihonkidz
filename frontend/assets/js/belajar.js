@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", async function () {
   try {
-    const response = await fetch("http://localhost:8081/auth/protected", {
+    const response = await fetch("https://auth-dot-sonic-totem-438312-d0.et.r.appspot.com/auth/protected", {
       method: "GET",
       credentials: "include",
     });
@@ -23,14 +23,14 @@ const logoutButton = document.getElementById("logoutBtn");
 if (logoutButton) {
   logoutButton.addEventListener("click", async function () {
     try {
-      const response = await fetch("http://localhost:8081/auth/logout", {
+      const response = await fetch("https://auth-dot-sonic-totem-438312-d0.et.r.appspot.com/auth/logout", {
         method: "POST",
         credentials: "include",
       });
 
       const result = await response.json();
       if (response.ok) {
-        window.location.href = "login";
+        window.location.href = "login.html";
       } else {
         alert(result.message);
       }
@@ -43,18 +43,18 @@ if (logoutButton) {
 
 function startQuiz(id_quiz) {
   // Arahkan ke halaman quiz dengan ID kuis dan pilihan sebagai URL parameters
-  const url = `quiz?id_quiz=${id_quiz}`;
+  const url = `quiz.html?id_quiz=${id_quiz}`;
   window.location.href = url;
 }
 
 function startTantanganhiragana() {
   tantangan = "hiragana";
-  const url = `tantangan?tantangan=${tantangan}`;
+  const url = `tantangan.html?tantangan=${tantangan}`;
   window.location.href = url;
 }
 
 function startTantangankatakana() {
   tantangan = "katakana";
-  const url = `tantangan?tantangan=${tantangan}`;
+  const url = `tantangan.html?tantangan=${tantangan}`;
   window.location.href = url;
 }

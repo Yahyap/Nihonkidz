@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const authController = require("../controllers/authController");
+const userController = require("../controllers/userController");
 const jwtAuth = require("../middleware/jwtAuth");
 
 router.use((req, res, next) => {
@@ -8,7 +8,7 @@ router.use((req, res, next) => {
   next();
 });
 
-router.put("/updatepass", jwtAuth(), authController.updatepass);
-router.put("/updatename", jwtAuth(), authController.updatename);
+router.put("/updatepass", userController.updatepass);
+router.put("/updatename", userController.updatename);
 
 module.exports = router;

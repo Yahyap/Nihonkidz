@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css" />
     <style>
       body {
-        font-family: "Comic Sans MS", cursive, sans-serif;
+        font-family: "Comic Sans MS";
       }
     </style>
   </head>
@@ -109,13 +109,37 @@
             <div class="modal-header">
               <h5 class="modal-title" id="quizEndModalLabel">Error</h5>
             </div>
-            <div class="modal-body"><span id="error"> </span></div>
+            <div class="modal-body"><span id="reason"> </span></div>
             <div class="modal-footer">
               <button
                 type="button"
                 class="btn btn-primary"
                 id="closeButton"
                 onclick="$('#quizEndModal').modal('hide');">
+                Tutup
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="finEndModal"
+        tabindex="-1"
+        aria-labelledby="finEndModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="finEndModalLabel"> </h5>
+            </div>
+            <div class="modal-body"><span id="finreason"> </span></div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-primary"
+                id="finButton"
+                onclick="$('#finEndModal').modal('hide');">
                 Tutup
               </button>
             </div>

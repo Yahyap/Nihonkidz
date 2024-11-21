@@ -5,7 +5,7 @@ document
     const user_email_address = document.getElementById("InputEmail").value;
     const user_password = document.getElementById("InputPassword").value;
 
-    const response = await fetch("http://localhost:8081/auth/login", {
+    const response = await fetch("https://auth-dot-sonic-totem-438312-d0.et.r.appspot.com/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -18,7 +18,9 @@ document
     if (response.ok) {
       window.location.href = "index.html";
     } else {
-      let spanElement = document.getElementById("error");
+      let popContext = document.getElementById("quizEndModalLabel");
+      popContext.innerText = result.status;
+      let spanElement = document.getElementById("reason");
       spanElement.textContent = result.message;
       $("#quizEndModal").modal("show");
     }

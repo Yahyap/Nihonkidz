@@ -1,5 +1,12 @@
-runtime: nodejs20
-service: auth
+runtime: python39
+handlers:
+- url: /
+  static_files: login.html
+  upload: login.html
+
+- url: /(.*)
+  static_files: \1
+  upload: (.*)
 
 automatic_scaling:
   min_instances: 0

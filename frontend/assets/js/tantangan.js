@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   async function fetchQuizData() {
     try {
       const response = await fetch(
-        `http://localhost:8083/belajar/tantangan/${tantangan}`,
+        `https://quiz-dot-sonic-totem-438312-d0.et.r.appspot.com/belajar/tantangan/${tantangan}`,
         {
           method: "GET",
           credentials: "include",
@@ -238,5 +238,5 @@ document.addEventListener("DOMContentLoaded", async function () {
   // Memulai dengan pertanyaan pertama
 });
 function closeQuiz() {
-  window.location.href = "belajar";
+  window.location.href = "belajar.html";
 }

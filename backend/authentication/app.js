@@ -8,7 +8,7 @@ const cookieParser = require("cookie-parser");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors({ origin: "http://localhost:8080", credentials: true }));
+app.use(cors({ origin: "https://sonic-totem-438312-d0.et.r.appspot.com"  , credentials: true }));
 app.use(cookieParser());
 
 app.use("/auth", authRoutes);

@@ -4,10 +4,8 @@ const validator = require("validator");
 
 exports.updatepass = async (req, res) => {
   console.log("Update Password .....");
-  let { old_password, new_password, con_new_password } = req.body;
+  let { user_email_address, old_password, new_password, con_new_password } = req.body;
   let updateAt = new Date().toISOString();
-  const userData = req.cookies.token;
-  console.log(userData.user_email_address);
 
   if (!old_password) {
     return res.status(400).json({
@@ -35,7 +33,7 @@ exports.updatepass = async (req, res) => {
 
   db = `
   SELECT * FROM user_login
-  WHERE user_email = "${userData.user_email_address}"
+  WHERE user_email = "${user_email_address}"
   `;
 
   connection.query(db, function (err, data) {
@@ -66,12 +64,19 @@ exports.updatepass = async (req, res) => {
         message: "Wrong Old Password",
       });
     }
+    if (new_password.length <= 5) {
+      return res.status(400).json({
+        status: "Failed",
+        requestAt: new Date().toISOString(),
+        message: "Please Input More than 6 Character",
+      });
+    }
 
     const salt = bcrypt.genSaltSync(8);
     new_password = bcrypt.hashSync(new_password, salt);
 
     update = `UPDATE user_login 
-    SET user_password = '${new_password}', updateAt = '${updateAt}' WHERE user_email = "${userData.user_email_address}"`;
+    SET user_password = '${new_password}', updateAt = '${updateAt}' WHERE user_email = "${user_email_address}"`;
     connection.query(update, function (err, data) {
       return res.status(201).json({
         status: "Success",

@@ -2,7 +2,7 @@ let useremail;
 
 document.addEventListener("DOMContentLoaded", async function () {
   try {
-    const response = await fetch("http://localhost:8081/auth/protected", {
+    const response = await fetch("https://auth-dot-sonic-totem-438312-d0.et.r.appspot.com/auth/protected", {
       method: "GET",
       credentials: "include",
     });
@@ -27,7 +27,7 @@ const logoutButton = document.getElementById("logoutBtn");
 if (logoutButton) {
   logoutButton.addEventListener("click", async function () {
     try {
-      const response = await fetch("http://localhost:8081/auth/logout", {
+      const response = await fetch("https://auth-dot-sonic-totem-438312-d0.et.r.appspot.com/auth/logout", {
         method: "POST",
         credentials: "include",
       });
@@ -64,12 +64,11 @@ document
       stop;
     }
 
-    const response = await fetch("http://localhost:8082/user/updatename", {
+    const response = await fetch("https://user-dot-sonic-totem-438312-d0.et.r.appspot.com/user/updatename", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      credentials: "include",
       body: JSON.stringify({
         user_email_address,
         new_firstname,
@@ -102,14 +101,14 @@ document
     const old_password = document.getElementById("old_password").value;
     const new_password = document.getElementById("new_password").value;
     const con_new_password = document.getElementById("con_new_password").value;
-
-    const response = await fetch("http://localhost:8082/user/updatepass", {
+    const user_email_address = useremail;
+    const response = await fetch("https://user-dot-sonic-totem-438312-d0.et.r.appspot.com/user/updatepass", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      credentials: "include",
       body: JSON.stringify({
+        user_email_address,
         old_password,
         new_password,
         con_new_password,

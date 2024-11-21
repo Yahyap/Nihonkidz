@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", async function () {
   try {
-    const response = await fetch("http://localhost:8081/auth/protected", {
+    const response = await fetch("https://auth-dot-sonic-totem-438312-d0.et.r.appspot.com/auth/protected", {
       method: "GET",
       credentials: "include",
     });
@@ -11,11 +11,11 @@ document.addEventListener("DOMContentLoaded", async function () {
       spanElement.textContent =
         result.user.firstname + ` ` + result.user.lastname;
     } else {
-      window.location.href = "../login";
+      window.location.href = "../login.html";
     }
   } catch (error) {
     console.error("Error fetching home:", error);
-    window.location.href = "../login";
+    window.location.href = "../login.html";
   }
 });
 
@@ -23,14 +23,14 @@ const logoutButton = document.getElementById("logoutBtn");
 if (logoutButton) {
   logoutButton.addEventListener("click", async function () {
     try {
-      const response = await fetch("http://localhost:8081/auth/logout", {
+      const response = await fetch("https://auth-dot-sonic-totem-438312-d0.et.r.appspot.com/auth/logout", {
         method: "POST",
         credentials: "include",
       });
 
       const result = await response.json();
       if (response.ok) {
-        window.location.href = "../login";
+        window.location.href = "../login.html";
       } else {
         alert(result.message);
       }

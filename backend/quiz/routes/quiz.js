@@ -8,8 +8,8 @@ router.use((req, res, next) => {
   next();
 });
 
-router.get("/quiz/:id_quiz", jwtAuth(), quizController.quiz);
-router.get("/tantangan/hiragana", jwtAuth(), quizController.tantanganHiragana);
-router.get("/tantangan/katakana", jwtAuth(), quizController.tantanganKatakana);
+router.get("/quiz/:id_quiz", quizController.quiz);
+router.get("/tantangan/hiragana", quizController.tantanganHiragana);
+router.get("/tantangan/katakana", quizController.tantanganKatakana);
 
 module.exports = router;

@@ -5,6 +5,7 @@ const validator = require("validator");
 exports.signup = async (req, res) => {
   try {
     console.log("Register .....");
+
     let {
       firstname,
       lastname,
@@ -12,6 +13,7 @@ exports.signup = async (req, res) => {
       user_password,
       user_password_repeat,
     } = req.body;
+
     let createdAt = new Date().toISOString();
     let updateAt = new Date().toISOString();
 
@@ -31,7 +33,7 @@ exports.signup = async (req, res) => {
       });
     }
 
-    if (validator.isEmail(user_email_address) === false) {
+    if (!validator.isEmail(user_email_address)) {
       return res.status(400).json({
         status: "Failed",
         requestAt: new Date().toISOString(),
@@ -55,7 +57,7 @@ exports.signup = async (req, res) => {
       });
     }
 
-    if ((user_password_repeat = !user_password)) {
+    if (user_password_repeat !== user_password) {
       return res.status(400).json({
         status: "Failed",
         requestAt: new Date().toISOString(),
@@ -63,12 +65,18 @@ exports.signup = async (req, res) => {
       });
     }
 
-    let db = `
-  SELECT * FROM user_login 
-  WHERE user_email = "${user_email_address}"
-  `;
+    // Cek jika email sudah ada
+    let db = `SELECT * FROM user_login WHERE user_email = ?`;
+    connection.query(db, [user_email_address], function (err, data) {
+      if (err) {
+        console.error('Error executing query:', err);
+        return res.status(500).json({
+          status: "Failed",
+          requestAt: new Date().toISOString(),
+          message: "Internal Server Error",
+        });
+      }
 
-    connection.query(db, function (err, data) {
       if (data.length >= 1) {
         return res.status(409).json({
           status: "Failed",
@@ -81,21 +89,33 @@ exports.signup = async (req, res) => {
       user_password = bcrypt.hashSync(user_password, salt);
 
       let ins_db = `INSERT INTO user_login (firstname, lastname, user_email, user_password, createdAt, updateAt) 
-      VALUES ('${firstname}', '${lastname}', '${user_email_address}', '${user_password}', '${createdAt}', '${updateAt}');`;
-      connection.query(ins_db, function (err, data) {
+      VALUES (?, ?, ?, ?, ?, ?)`;
+      connection.query(ins_db, [firstname, lastname, user_email_address, user_password, createdAt, updateAt], function (err, data) {
+        if (err) {
+          console.error('Error inserting data:', err);
+          return res.status(500).json({
+            status: "Failed",
+            requestAt: new Date().toISOString(),
+            message: "Internal Server Error",
+          });
+        }
+
         return res.status(201).json({
           status: "Success",
           requestAt: new Date().toISOString(),
+          message: "Selamat! Akun anda telah berhasil dibuat",
         });
       });
     });
   } catch (err) {
-    return res.status(err.code).json({
+    console.error('Unexpected error:', err);
+    return res.status(500).json({
       status: "Failed",
-      message: err.message,
+      message: "Internal Server Error",
     });
   }
 };
+
 
 exports.signin = async (req, res) => {
   try {
@@ -151,7 +171,9 @@ exports.signin = async (req, res) => {
       const userData = { user_id, user_email_address, firstname, lastname };
       const cookieOptions = {
         httpOnly: true,
-        secure: false,
+        secure: true,
+        sameSite: 'None',
+        path: '/',
       };
 
       res.cookie("token", userData, cookieOptions);
@@ -173,7 +195,7 @@ exports.signin = async (req, res) => {
 exports.logout = async (req, res) => {
   try {
     console.log("Logout .....");
-    res.clearCookie("token");
+    res.clearCookie("token", { path: '/', httpOnly: true, secure: true, sameSite: 'None'});
     return res.status(200).json({
       status: "Success",
       requestAt: new Date().toISOString(),

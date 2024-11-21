@@ -1,5 +1,5 @@
 runtime: nodejs20
-service: auth
+service: user
 
 automatic_scaling:
   min_instances: 0

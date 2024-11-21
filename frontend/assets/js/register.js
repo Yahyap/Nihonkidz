@@ -10,7 +10,7 @@ document
       "InputPasswordrepeat"
     ).value;
 
-    const response = await fetch("http://localhost:8081/auth/register", {
+    const response = await fetch("https://auth-dot-sonic-totem-438312-d0.et.r.appspot.com/auth/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -26,10 +26,26 @@ document
 
     const result = await response.json();
     if (response.ok) {
-      window.location.href = "login.html";
+      let popContext = document.getElementById("finEndModalLabel");
+      popContext.innerText = result.status;
+      let spanElement = document.getElementById("finreason");
+      spanElement.textContent = result.message;
+      $("#finEndModal").modal("show");
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+      });
+      
     } else {
-      let spanElement = document.getElementById("error");
+      let popContext = document.getElementById("quizEndModalLabel");
+      popContext.innerText = result.status;
+      let spanElement = document.getElementById("reason");
       spanElement.textContent = result.message;
       $("#quizEndModal").modal("show");
     }
   });
+
+document.getElementById("finButton").addEventListener("click", async function() {
+  window.location.href = "login.html";
+});
