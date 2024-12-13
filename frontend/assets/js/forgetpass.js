@@ -2,8 +2,7 @@ document
   .getElementById("loginForm")
   .addEventListener("submit", async function (event) {
     event.preventDefault();
-    const user_email_address = document.getElementById("InputEmail").value;
-    const user_password = document.getElementById("InputPassword").value;
+    const email = document.getElementById("InputEmail").value;
 
     const response = await fetch(
       "https://auth-dot-sonic-totem-438312-d0.et.r.appspot.com/auth/forgot-password",
@@ -13,7 +12,7 @@ document
           "Content-Type": "application/json",
         },
         credentials: "include",
-        body: JSON.stringify({ user_email_address }),
+        body: JSON.stringify({ email }),
       }
     );
 
