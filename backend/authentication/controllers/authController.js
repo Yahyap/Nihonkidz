@@ -276,16 +276,20 @@ exports.forgotpass = async (req, res) => {
 
     db = `SELECT * FROM user_login WHERE user_email = "${email}"`;
     connection.query(db, function (err, data) {
-      const firstname = data[0].firstname;
-      const lastname = data[0].lastname;
-      let username = firstname + " " + lastname;
-
+      console.log(data.length);
+      if (data.length <= 0) {
+        return res.status(400).json({
+          status: "Failed",
+          requestAt: new Date().toISOString(),
+          message: "This email is not registered",
+        });
+      }
       // Generate token
-      const token = jwt.sign({ email, username }, process.env.JWT_SECRET);
+      const token = jwt.sign({ email }, process.env.JWT_SECRET);
       console.log("test");
 
       // Kirim email dengan token
-      const resetLink = `https://your-frontend-url/reset-password?token=${token}`;
+      const resetLink = `https://sonic-totem-438312-d0.et.r.appspot.com/reset-password.html?token=${token}`;
       transporter.sendMail(
         {
           to: email,
@@ -295,9 +299,17 @@ exports.forgotpass = async (req, res) => {
         (err, info) => {
           if (err) {
             console.error(err);
-            return res.status(500).json({ message: "Gagal mengirim email." });
+            return res.status(500).json({ 
+              status: "Failed",
+              requestAt: new Date().toISOString(),
+              message: "Gagal mengirim email." 
+            });
           }
-          res.json({ message: "Email reset password telah dikirim." });
+          return res.status(200).json({
+            status: "Success",
+            requestAt: new Date().toISOString(), 
+            message: "Email reset password telah dikirim." 
+          });
         }
       );
     });
@@ -313,9 +325,26 @@ exports.resetpass = async (req, res) => {
   try {
     const token = req.params.token;
     console.log(token);
-    let { user_password, user_password_repeat } = req.body;
+    let { password, password_repeat } = req.body;
+    console.log(password);
+    console.log(password_repeat);
+    if (!password) {
+      return res.status(400).json({
+        status: "Failed",
+        requestAt: new Date().toISOString(),
+        message: "Please Input Password",
+      });
+    }
 
-    if (user_password_repeat !== user_password) {
+    if (password.length <= 5) {
+      return res.status(400).json({
+        status: "Failed",
+        requestAt: new Date().toISOString(),
+        message: "Please Input More than 6 Character",
+      });
+    }
+
+    if (password_repeat !== password) {
       return res.status(400).json({
         status: "Failed",
         requestAt: new Date().toISOString(),
@@ -333,7 +362,9 @@ exports.resetpass = async (req, res) => {
 
     update = `UPDATE user_login 
     SET user_password = '${user_password}', updateAt = '${updateAt}' WHERE user_email = "${user_email}"`;
+    
     connection.query(update, function (err, data) {
+      console.log("test1");
       return res.status(201).json({
         status: "Success",
         message: "Password telah diperbarui",
@@ -341,6 +372,7 @@ exports.resetpass = async (req, res) => {
       });
     });
   } catch {
+    console.log("test2");
     return res.status(err.code).json({
       status: "Failed",
       message: err.message,

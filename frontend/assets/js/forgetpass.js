@@ -1,5 +1,5 @@
 document
-  .getElementById("loginForm")
+  .getElementById("forgotForm")
   .addEventListener("submit", async function (event) {
     event.preventDefault();
     const email = document.getElementById("InputEmail").value;
