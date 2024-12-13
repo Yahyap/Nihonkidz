@@ -1,6 +1,7 @@
 const connection = require("../mysql/connect");
 const bcrypt = require("bcrypt");
 const validator = require("validator");
+const jwt = require("jsonwebtoken");
 
 exports.signup = async (req, res) => {
   try {
@@ -69,7 +70,7 @@ exports.signup = async (req, res) => {
     let db = `SELECT * FROM user_login WHERE user_email = ?`;
     connection.query(db, [user_email_address], function (err, data) {
       if (err) {
-        console.error('Error executing query:', err);
+        console.error("Error executing query:", err);
         return res.status(500).json({
           status: "Failed",
           requestAt: new Date().toISOString(),
@@ -90,32 +91,42 @@ exports.signup = async (req, res) => {
 
       let ins_db = `INSERT INTO user_login (firstname, lastname, user_email, user_password, createdAt, updateAt) 
       VALUES (?, ?, ?, ?, ?, ?)`;
-      connection.query(ins_db, [firstname, lastname, user_email_address, user_password, createdAt, updateAt], function (err, data) {
-        if (err) {
-          console.error('Error inserting data:', err);
-          return res.status(500).json({
-            status: "Failed",
+      connection.query(
+        ins_db,
+        [
+          firstname,
+          lastname,
+          user_email_address,
+          user_password,
+          createdAt,
+          updateAt,
+        ],
+        function (err, data) {
+          if (err) {
+            console.error("Error inserting data:", err);
+            return res.status(500).json({
+              status: "Failed",
+              requestAt: new Date().toISOString(),
+              message: "Internal Server Error",
+            });
+          }
+
+          return res.status(201).json({
+            status: "Success",
             requestAt: new Date().toISOString(),
-            message: "Internal Server Error",
+            message: "Selamat! Akun anda telah berhasil dibuat",
           });
         }
-
-        return res.status(201).json({
-          status: "Success",
-          requestAt: new Date().toISOString(),
-          message: "Selamat! Akun anda telah berhasil dibuat",
-        });
-      });
+      );
     });
   } catch (err) {
-    console.error('Unexpected error:', err);
+    console.error("Unexpected error:", err);
     return res.status(500).json({
       status: "Failed",
       message: "Internal Server Error",
     });
   }
 };
-
 
 exports.signin = async (req, res) => {
   try {
@@ -172,8 +183,8 @@ exports.signin = async (req, res) => {
       const cookieOptions = {
         httpOnly: true,
         secure: true,
-        sameSite: 'None',
-        path: '/',
+        sameSite: "None",
+        path: "/",
       };
 
       res.cookie("token", userData, cookieOptions);
@@ -195,7 +206,12 @@ exports.signin = async (req, res) => {
 exports.logout = async (req, res) => {
   try {
     console.log("Logout .....");
-    res.clearCookie("token", { path: '/', httpOnly: true, secure: true, sameSite: 'None'});
+    res.clearCookie("token", {
+      path: "/",
+      httpOnly: true,
+      secure: true,
+      sameSite: "None",
+    });
     return res.status(200).json({
       status: "Success",
       requestAt: new Date().toISOString(),
@@ -235,6 +251,94 @@ exports.protected = async (req, res) => {
       });
     });
   } catch (err) {
+    return res.status(err.code).json({
+      status: "Failed",
+      message: err.message,
+    });
+  }
+};
+
+exports.forgotpass = async (req, res) => {
+  try {
+    console.log("test");
+
+    const transporter = nodemailer.createTransport({
+      service: "gmail", // atau gunakan layanan email lainnya
+      auth: {
+        user: "kidznihon@gmail.com",
+        pass: "ntst loja ozsv orpi", // Ganti dengan App Password Google
+      },
+    });
+
+    let { email } = req.body;
+
+    db = `SELECT * FROM user_login WHERE user_email = "${email}"`;
+    connection.query(db, function (err, data) {
+      const firstname = data[0].firstname;
+      const lastname = data[0].lastname;
+      let username = firstname + " " + lastname;
+
+      // Generate token
+      const token = jwt.sign({ email, username }, process.env.JWT_SECRET);
+      console.log("test");
+
+      // Kirim email dengan token
+      const resetLink = `https://your-frontend-url/reset-password?token=${token}`;
+      transporter.sendMail(
+        {
+          to: email,
+          subject: "Reset Password",
+          text: `Klik link berikut untuk mereset password Anda: ${resetLink}`,
+        },
+        (err, info) => {
+          if (err) {
+            console.error(err);
+            return res.status(500).json({ message: "Gagal mengirim email." });
+          }
+          res.json({ message: "Email reset password telah dikirim." });
+        }
+      );
+    });
+  } catch (err) {
+    return res.status(err.code).json({
+      status: "Failed",
+      message: err.message,
+    });
+  }
+};
+
+exports.resetpass = async (req, res) => {
+  try {
+    const token = req.params.token;
+    console.log(token);
+    let { user_password, user_password_repeat } = req.body;
+
+    if (user_password_repeat !== user_password) {
+      return res.status(400).json({
+        status: "Failed",
+        requestAt: new Date().toISOString(),
+        message: "Please Correct Input Password",
+      });
+    }
+
+    let updateAt = new Date().toISOString();
+
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const user_email = decoded.email;
+
+    const salt = bcrypt.genSaltSync(8);
+    new_password = bcrypt.hashSync(new_password, salt);
+
+    update = `UPDATE user_login 
+    SET user_password = '${user_password}', updateAt = '${updateAt}' WHERE user_email = "${user_email}"`;
+    connection.query(update, function (err, data) {
+      return res.status(201).json({
+        status: "Success",
+        message: "Password telah diperbarui",
+        requestAt: new Date().toISOString(),
+      });
+    });
+  } catch {
     return res.status(err.code).json({
       status: "Failed",
       message: err.message,

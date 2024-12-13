@@ -2,16 +2,16 @@ require("dotenv").config();
 
 const cors = require("cors");
 const express = require("express");
-const newsfeedRoutes = require("./routes/newsfeed");
+const testRoutes = require("./routes/test");
 const app = express();
 const cookieParser = require("cookie-parser");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors({ origin: "http://localhost:8080", credentials: true }));
+app.use(cors({ origin: "*", credentials: true }));
 app.use(cookieParser());
 
-app.use("/newsfeed", newsfeedRoutes);
+app.use("/test", testRoutes);
 
 app.get("/", function (req, res) {
   res.send(`Hallo`);

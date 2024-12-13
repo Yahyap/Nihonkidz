@@ -12,6 +12,7 @@ router.post("/register", authController.signup);
 router.post("/login", authController.signin);
 router.get("/protected", jwtAuth(), authController.protected);
 router.post("/logout", jwtAuth(), authController.logout);
+router.post("/reset-password/:token", authController);
+router.post("/forgot-password", authController.forgotpass);
 
 module.exports = router;
-
