@@ -2,6 +2,7 @@ const connection = require("../mysql/connect");
 const bcrypt = require("bcrypt");
 const validator = require("validator");
 const jwt = require("jsonwebtoken");
+const nodemailer = require("nodemailer");
 
 exports.signup = async (req, res) => {
   try {
@@ -271,6 +272,7 @@ exports.forgotpass = async (req, res) => {
     });
 
     let { email } = req.body;
+    console.log("test");
 
     db = `SELECT * FROM user_login WHERE user_email = "${email}"`;
     connection.query(db, function (err, data) {
