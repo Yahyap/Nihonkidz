@@ -299,16 +299,16 @@ exports.forgotpass = async (req, res) => {
         (err, info) => {
           if (err) {
             console.error(err);
-            return res.status(500).json({ 
+            return res.status(500).json({
               status: "Failed",
               requestAt: new Date().toISOString(),
-              message: "Gagal mengirim email." 
+              message: "Gagal mengirim email.",
             });
           }
           return res.status(200).json({
             status: "Success",
-            requestAt: new Date().toISOString(), 
-            message: "Email reset password telah dikirim." 
+            requestAt: new Date().toISOString(),
+            message: "Email reset password telah dikirim.",
           });
         }
       );
@@ -356,22 +356,33 @@ exports.resetpass = async (req, res) => {
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     const user_email = decoded.email;
+    console.log(user_email);
+
+    console.log("test1");
 
     const salt = bcrypt.genSaltSync(8);
-    new_password = bcrypt.hashSync(new_password, salt);
+    password = bcrypt.hashSync(password, salt);
+    console.log(password);
 
     update = `UPDATE user_login 
-    SET user_password = '${user_password}', updateAt = '${updateAt}' WHERE user_email = "${user_email}"`;
-    
+    SET user_password = '${password}', updateAt = '${updateAt}' WHERE user_email = "${user_email}"`;
+
     connection.query(update, function (err, data) {
-      console.log("test1");
+      if (err) {
+        console.error("Error executing query:", err);
+        return res.status(500).json({
+          status: "Failed",
+          requestAt: new Date().toISOString(),
+          message: "Internal Server Error",
+        });
+      }
       return res.status(201).json({
         status: "Success",
         message: "Password telah diperbarui",
         requestAt: new Date().toISOString(),
       });
     });
-  } catch {
+  } catch (err) {
     console.log("test2");
     return res.status(err.code).json({
       status: "Failed",
