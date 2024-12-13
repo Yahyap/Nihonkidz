@@ -13,3 +13,5 @@ router.get("/tantangan/hiragana", quizController.tantanganHiragana);
 router.get("/tantangan/katakana", quizController.tantanganKatakana);
 
 module.exports = router;
+
+

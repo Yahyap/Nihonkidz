@@ -12,3 +12,5 @@ router.put("/updatepass", userController.updatepass);
 router.put("/updatename", userController.updatename);
 
 module.exports = router;
+
+

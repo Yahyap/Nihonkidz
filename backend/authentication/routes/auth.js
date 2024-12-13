@@ -14,3 +14,4 @@ router.get("/protected", jwtAuth(), authController.protected);
 router.post("/logout", jwtAuth(), authController.logout);
 
 module.exports = router;
+
