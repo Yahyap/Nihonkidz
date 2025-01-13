@@ -17,7 +17,7 @@ document
     const password_repeat = document.getElementById("InputPasswordrepeat").value;
 
     const response = await fetch(
-      `https://auth-dot-sonic-totem-438312-d0.et.r.appspot.com/auth/reset-password/${token}`,
+      `https://auth-dot-sonic-totem-438312-d0.et.r.appspot.com/user/reset-password/${token}`,
       {
         method: "PUT",
         headers: {
