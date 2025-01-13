@@ -29,11 +29,16 @@ document
 
     const result = await response.json();
     if (response.ok) {
-      let popContext = document.getElementById("quizEndModalLabel");
-      popContext.innerText = result.status;
-      let spanElement = document.getElementById("reason");
-      spanElement.textContent = result.message;
-      $("#quizEndModal").modal("show");
+        let popContext = document.getElementById("finEndModalLabel");
+        popContext.innerText = result.status;
+        let spanElement = document.getElementById("finreason");
+        spanElement.textContent = result.message;
+        $("#finEndModal").modal("show");
+        confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 },
+        });
     } else {
       let popContext = document.getElementById("quizEndModalLabel");
       popContext.innerText = result.status;

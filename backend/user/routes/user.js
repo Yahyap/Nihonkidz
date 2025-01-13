@@ -10,6 +10,8 @@ router.use((req, res, next) => {
 
 router.put("/updatepass", userController.updatepass);
 router.put("/updatename", userController.updatename);
+router.put("/reset-password/:token", userController.resetpass);
+router.post("/forgot-password", userController.forgotpass);
 
 module.exports = router;
 
