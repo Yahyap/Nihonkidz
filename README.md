@@ -49,10 +49,3 @@ cd backend/quiz
 npm install
 npm start
 ```
-
-## Lisensi
-Proyek ini dirilis di bawah lisensi **MIT**.
-
----
-Nihonkidz - Belajar Hiragana & Katakana dengan cara yang menyenangkan! 🎌
-
